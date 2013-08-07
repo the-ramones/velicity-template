@@ -32,7 +32,7 @@
         
     <!-- persistence -->    
 
-    <bean  id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean  id="reportsDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${database.driverClassName}" />
         <property name="url" value="${database.url}" />
         <property name="username" value="${database.username}" />
@@ -49,13 +49,53 @@
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
         <property name="showSql" value="${database.showSql}" />
         <property name="generateDdl" value="${database.generateDdl}" />
+        <property name="databasePlatform" value="${database.platform}" />
     </bean>
+    
+    <!-- EclipseLink JPA Dialect bean -->
+    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
 
-    <!-- EntityMangerFactory, will be used with @PersistenceContext(unitName = "in-settings")
-    <bean id="entityManagerFactory" class="org.org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="persistenceUnitName" value="reports" />
-        <property name="dataSource" ref="dataSource" />
-        <!-- <property name="loadTimeWeaver" class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> -->
+    <!-- Auto detect instrumentation jar from GlassFish, OC4J, Spring VM agent
+    and (but through ReflectiveLoadTimeWeaver) TomcatInstrumentableClassLoader
+    have to : weaver instrument on server (spring-agent.jar, org.springframework.instrument.jar, eclipselink.jar)
+    propery: set to TRUE, and:
+        1. auto detection (convention-over-configuration) by <context:load-time-weaver />
+        2. manual set to <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver">
+    -->
+    <!--<context:load-time-weaver />-->
+        
+    <!-- EntityMangerFactory, will be used with @PersistenceContext(unitName = "in-settings") -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="reportPU" />
+        <property name="dataSource" ref="reportsDS" />
+        <!-- public class InstrumentationLoadTimeWeaver extends Object implements LoadTimeWeaver
+        
+        LoadTimeWeaver relying on VM Instrumentation.
+        Start the JVM specifying the Java agent to be used, like as follows:
+
+            -javaagent:path/to/org.springframework.instrument.jar
+
+        where org.springframework.instrument.jar is a JAR file containing the InstrumentationSavingAgent class, as shipped with Spring.
+
+        In Eclipse, for example, set the "Run configuration"'s JVM args to be of the form:
+
+            -javaagent:${project_loc}/lib/org.springframework.instrument.jar
+        -->
+        <!--
+        <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.SimpleLoadTimeWeaver" />
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver">
+        </property>
+        
+        http://www.stackoverflow.com/questions/10389354/eclipselink-and-spring-3-1
+        -->
+        <property name="jpaPropertyMap">
+            <props>
+                <prop key="eclipselink.weaving">false</prop>
+            </props>
+        </property>
+        <!-- an inner beans? -->
+        <property name="jpaDialect" ref="jpaDialect" />
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
     </bean>
 
@@ -63,6 +103,22 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
     
-    <tx:annotation-driven />
-
+    <!-- @Transactional will be scanned at start-up of context -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    <!-- @Cacheable will be scanned at srart-up of context -->
+    <cache:annotation-driven />
+    
+<!--     C3P0 pool? 
+    <bean id="c3p0reportDS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/driftslogg" />
+        <property name="user" value="root" />
+        <property name="password" value="root" />
+        <property name="acquireIncrement" value="5" />
+        <property name="idleConnectionTestPeriod" value="60" />
+        <property name="maxPoolSize" value="100" />
+        <property name="maxStatements" value="50" />
+        <property name="minPoolSize" value="10" />
+    </bean>-->
 </beans>
