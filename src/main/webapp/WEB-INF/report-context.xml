@@ -31,20 +31,29 @@
     <context:property-placeholder location="classpath:report.properties" />
         
     <!-- persistence -->    
-    
+
+    <bean  id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${database.driverClassName}" />
+        <property name="url" value="${database.url}" />
+        <property name="username" value="${database.username}" />
+        <property name="password" value="${database.password}" />
+    </bean>
+        
     <!-- will parse @PersistenceContext and @PersistenceUnit annotations with 'unitName'
          parameter specified or without if <persistence-unit name="DEFAULT"> and 
          autowire EntityManager and EntityManagerFactory beans to them by type
     -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
     
+    <!-- EclipseLink JPA vendor adapter -->
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
         <property name="showSql" value="${database.showSql}" />
         <property name="generateDdl" value="${database.generateDdl}" />
     </bean>
 
+    <!-- EntityMangerFactory, will be used with @PersistenceContext(unitName = "in-settings")
     <bean id="entityManagerFactory" class="org.org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="persistenceUnitName" value="msh" />
+        <property name="persistenceUnitName" value="reports" />
         <property name="dataSource" ref="dataSource" />
         <!-- <property name="loadTimeWeaver" class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> -->
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
@@ -52,13 +61,6 @@
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
-    </bean>
-
-    <bean  id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${database.driverClassName}" />
-        <property name="url" value="${database.url}" />
-        <property name="username" value="${database.username}" />
-        <property name="password" value="${database.password}" />
     </bean>
     
     <tx:annotation-driven />
