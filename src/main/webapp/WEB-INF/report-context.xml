@@ -27,9 +27,10 @@
           http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 ">
+    
     <!-- context -->
     
-    <context:annotation-config />
+    <context:component-scan base-package="sp" />
     
     <context:property-placeholder location="classpath:report.properties" />
         
@@ -41,12 +42,6 @@
         <property name="username" value="${database.username}" />
         <property name="password" value="${database.password}" />
     </bean>
-        
-    <!-- will parse @PersistenceContext and @PersistenceUnit annotations with 'unitName'
-         parameter specified or without if <persistence-unit name="DEFAULT"> and 
-         autowire EntityManager and EntityManagerFactory beans to them by type
-    -->
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
     
     <!-- EclipseLink JPA vendor adapter -->
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
@@ -102,14 +97,25 @@
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
     </bean>
 
+    <!-- will parse @PersistenceContext and @PersistenceUnit annotations with 'unitName'
+         parameter specified or without if <persistence-unit name="DEFAULT"> and 
+         autowire EntityManager and EntityManagerFactory beans to them by type
+    -->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />    
+    <!-- @Transactional will be scanned at start-up of context -->
+    
+    <!-- transactions -->
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    <!-- Spring's PlatformTrransactionManager, non-JTA -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
     
-    <!-- @Transactional will be scanned at start-up of context -->
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- caches -->
     
-<!--     @Cacheable will be scanned at srart-up of context 
+    <!--     @Cacheable will be scanned at srart-up of context 
     <cache:annotation-driven cache-manager="cacheManager" mode="proxy" order="" />
     
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
@@ -120,6 +126,14 @@
     <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
         <property name="configLocation" value="classpath:ehcache-report.xml"/>
     </bean>-->
+    
+    <!-- post processors -->
+    
+    <!-- Scans for @Required annotations in source code and check availability of
+    an attribute. If hasn't been set throws an exception -->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> 
+    
+    <!-- todo -->
     
     <!--     C3P0 pool? 
     <bean id="c3p0reportDS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -132,5 +146,6 @@
         <property name="maxPoolSize" value="100" />
         <property name="maxStatements" value="50" />
         <property name="minPoolSize" value="10" />
-    </bean>-->
+    </bean>-->    
+
 </beans>

@@ -25,15 +25,23 @@ public class ReportServiceImpl implements ReportService {
     }
 
     /**
-     * Cache with condition of report's date (as report cannot be added post factum)
+     * Cache with condition of report's date (as report cannot be added post
+     * factum)
+     *
      * @param performer
-     * @return 
+     * @return
      */
     @Override
     //@Cacheable(value = "sp.model.Report", key = "#performer")
-    @Transactional(readOnly = true)
-    public List<Report> getReports(String performer) {        
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<Report> getReports(String performer) {
         return reportRepository.getReportsByPerformer(performer);
-        
+
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public Report getReportById(Long id) {
+        return reportRepository.getReportById(id);
     }
 }
