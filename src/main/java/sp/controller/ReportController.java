@@ -3,6 +3,7 @@ package sp.controller;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +23,9 @@ import sp.service.ReportService;
 @RequestMapping("/report")
 public class ReportController {
 
-    @Inject
+    @Inject    
     private ReportService reportService;
-
+    
     @PostConstruct
     public void postConstruct() {
     }
@@ -33,14 +34,10 @@ public class ReportController {
     public void preDestroy() {
     }
 
-    @Required
-    public void setReportService(ReportService reportService) {
-        this.reportService = reportService;
-    }
-
-    @RequestMapping(value = "search", method = RequestMethod.GET)
+    @RequestMapping(value = {"/","search"}, method = RequestMethod.GET)
     public String setupForm(Model model) {
-        
+        //TODO: add getPerformers to repository
+        //model.addAttribute("performers", reportService.getPerformers);
         return "form";
     }
 

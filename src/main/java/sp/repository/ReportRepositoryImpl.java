@@ -3,12 +3,14 @@ package sp.repository;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
 import sp.model.Report;
 
 /**
  *
  * @author the-ramones
  */
+@Repository
 public class ReportRepositoryImpl implements ReportRepository {
 
     /*

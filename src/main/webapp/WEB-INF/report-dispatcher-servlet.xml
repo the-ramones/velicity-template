@@ -32,16 +32,16 @@
     <!-- issue: include or not -->
     <tx:annotation-driven />
     
-    <context:component-scan base-package="sp.controller" />
+    <context:component-scan base-package="sp" />
     
     <!-- Velocity integration -->
     <bean id="velocityConfig"
-       class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <property name="resourceLoaderPath" value="/WEB-INF/views/" />
     </bean>
 	 
     <bean id="viewResolver"
-        class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+          class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
         <property name="cache" value="true" />
         <property name="prefix" value="" />
         <property name="layoutUrl" value="layout.vm"/>
@@ -53,13 +53,13 @@
     for the index controller we are using ParameterizableViewController, so we must
     define an explicit mapping for it.
     -->
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+<!--    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
+                <prop key="index.vm">indexController</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
 
     <!-- default view resolver -->
     <!--<bean id="viewResolver"
@@ -71,8 +71,8 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
+<!--    <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index" />
+          p:viewName="index" />-->
 
 </beans>

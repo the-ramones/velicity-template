@@ -4,7 +4,8 @@
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	 version="3.0">
-<!--         metadata-complete="true">-->
+    <!-- Servlet 3.0 when web.xml is compelete -->
+    <!-- metadata-complete="true"> -->
     <display-name>Report</display-name>
     <context-param>
         <description>Spring application context configuration file location</description>
@@ -28,16 +29,16 @@
         A string containing only the ’/’ character indicates the "default" servlet
             of the application. In this case the servlet path is the request URI 
             minus the context path and the path info is null.
-        All other strings are used for exact matches only.
+        All other strings are used for exact matches only. Advice "/" generic path
     -->
     <servlet-mapping>
         <servlet-name>report-dispatcher</servlet-name>
-        <url-pattern>*.htm</url-pattern>
+        <url-pattern>/</url-pattern>
         <!-- Need a dispatcher-servlet.xml context config file. By convention-over-configuration
         principle it will be  "[servlet-name]+servlet.xml" in WEB-INF/classpath 
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:tatami-mvc.xml</param-value>
+            <param-value>classpath:report-mvc.xml</param-value>
         </init-param>
         -->
     </servlet-mapping>
