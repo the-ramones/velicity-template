@@ -14,4 +14,6 @@ public interface ReportService {
     public List<Report> getReports(String performer);
 
     public Report getReportById(Long id);
+    
+    public List<String> getPerformers();
 }

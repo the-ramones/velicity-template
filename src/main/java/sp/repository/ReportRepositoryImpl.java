@@ -3,6 +3,7 @@ package sp.repository;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import sp.model.Report;
 
@@ -58,7 +59,18 @@ public class ReportRepositoryImpl implements ReportRepository {
 
     @Override
     public List<Report> getReportsByPerformer(String performer) {
-        //TODO: insert implementation here
-        return null;
+        TypedQuery<Report> query = 
+                entityManager.createNamedQuery("Report.getReportsByPerformer", Report.class);        
+        query.setParameter("performer", performer);
+        return query.getResultList();
     }
+
+    @Override
+    public List<String> getPerformers() {
+        TypedQuery<String> query = 
+                entityManager.createNamedQuery("Report.getPerformers", String.class);
+        return query.getResultList();
+    }
+    
+    
 }

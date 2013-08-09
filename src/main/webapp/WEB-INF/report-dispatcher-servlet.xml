@@ -25,6 +25,14 @@
     <mvc:annotation-driven />
     <!-- duplicate previous -->
     <!--
+    Spring 3.1 introduced a new set of support classes for @RequestMapping methods
+    called RequestMappingHandlerMapping and RequestMappingHandlerAdapter respectively.
+    They are recommended for use and even required to take advantage of new features
+    in Spring MVC 3.1 and going forward. The new support classes are enabled by 
+    default by the MVC namespace and the MVC Java config but must be configured 
+    explicitly if using neither. This section describes a few important differences
+    between the old and the new support classes. 
+    
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />   
     -->

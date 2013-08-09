@@ -1,7 +1,12 @@
-<form name="report-request" action="/report/search" method="POST">
+<form name="report-request" action="/search" method="POST">
     <label>Start date:</label><input type="date" name="start-date">    
     <label>End date:</label><input type="date" name="end-date">
-    <label>Performer:</label><select name="performer"></select>
+    <label>Performer:</label>
+        <select name="performer">
+            #foreach( $performer in $performers ) 
+                <option value="$performer">$performer</option>
+            #end
+        </select>
     <label>Time Period:</label>
         <select name="time-period">
             <option value="last-qtr">Last Qtr</option>

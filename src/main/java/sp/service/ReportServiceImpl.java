@@ -46,4 +46,10 @@ public class ReportServiceImpl implements ReportService {
     public Report getReportById(Long id) {
         return reportRepository.getReportById(id);
     }
+
+    @Override
+    //@Transactional(propagation = Propagation.SUPPORTED, readOnly = true)
+    public List<String> getPerformers() {
+        return reportRepository.getPerformers();
+    }   
 }

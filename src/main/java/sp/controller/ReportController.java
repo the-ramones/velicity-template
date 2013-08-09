@@ -34,10 +34,9 @@ public class ReportController {
     public void preDestroy() {
     }
 
-    @RequestMapping(value = {"/","search"}, method = RequestMethod.GET)
-    public String setupForm(Model model) {
-        //TODO: add getPerformers to repository
-        //model.addAttribute("performers", reportService.getPerformers);
+    @RequestMapping(value = {"","search"}, method = RequestMethod.GET)
+    public String setupForm(Model model) {        
+        model.addAttribute("performers", reportService.getPerformers());
         return "form";
     }
 
@@ -57,11 +56,12 @@ public class ReportController {
     
     @RequestMapping(value = "clear", method = RequestMethod.GET)
     public String clear(Model model) {
-        return null;
+        //TODO: redirect to setupForm @requestMapping
+        return "form";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Model model) {
-        return null;
+        return "add";
     }
 }

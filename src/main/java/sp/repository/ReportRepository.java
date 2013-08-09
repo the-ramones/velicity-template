@@ -14,4 +14,6 @@ public interface ReportRepository {
     public List<Report> getReportsByPerformer(String performer);
 
     public Report saveReport(Report report);
+    
+    public List<String> getPerformers();
 }
