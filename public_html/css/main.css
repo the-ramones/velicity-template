@@ -175,12 +175,12 @@ body {
    ========================================================================== */
 .a-nav {
     text-decoration: none;
-    color: rgb(224, 133, 36);
+    color: rgb(204, 103, 26);
 }
 
 .a-nav:hover {
     text-decoration: underline;
-    text-shadow: 5px 5px 5px rgba(224, 133, 36, 0.25);
+    text-shadow: 5px 5px 5px rgba(204, 103, 26, 0.25);
 }
 
 /* ===================
