@@ -1,5 +1,6 @@
 package sp.repository;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -72,5 +73,13 @@ public class ReportRepositoryImpl implements ReportRepository {
         return query.getResultList();
     }
     
-    
+    @Override
+    public List<Report> getReports(String performer, Date startDate, Date endDate) {
+        TypedQuery<Report> query =
+                entityManager.createNamedQuery("Report.getReports", Report.class);
+        query.setParameter("performer", performer);
+        query.setParameter("startDate", startDate);
+        query.setParameter("endDate", endDate);
+        return query.getResultList();
+    }
 }

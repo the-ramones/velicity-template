@@ -1,15 +1,30 @@
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC Report project</title>
-    </head>
+## home page template
+<div id="article">
+    <div>
+        <h1>Reports!</h1>
+        <p>Reports! is a Java web-application to store activities based on Spring WEB MVC Framework</p>
+    </div>
+    <hr />
+    <div>
+        <h2><a class="a-nav" href="#">Use case 1: "save report"</a></h2>
+        <p>Fill in the form and click 'save' button to store a new activity record into the database</p>
+    </div>
 
-    <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC Report project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
-    </body>
-</html>
+    <hr />
+    <div>
+        <h2><a class="a-nav" href="#">Use case 2: "retrieve reports"</a></h2>
+        <p>Fill in the form and click 'get' button to get a report of activity records corresponding to a search criteria. If the number of reports more than !template! paging will be carried out</p>
+    </div>
+
+    <hr />
+    <div> 
+        <h2><a class="a-nav" href="#">Use case 3: "real-time search"</a></h2>
+        <p>Start typing a search query into "search" field. Choose found elements in a drop-down list to narrow down a result list or click "search" to view a full result</p> 
+    </div>
+</div> <!-- #article -->
+
+<div class="aside">
+    <h3>About Reports!</h3>
+    <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
+    <!-- insert hide button -->
+</div> <!-- #aside -->

@@ -1,5 +1,6 @@
 package sp.service;
 
+import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
 import org.springframework.stereotype.Service;
@@ -52,4 +53,9 @@ public class ReportServiceImpl implements ReportService {
     public List<String> getPerformers() {
         return reportRepository.getPerformers();
     }   
+
+    @Override
+    public List<Report> getReports(String performer, Date startDate, Date endDate) {
+        return reportRepository.getReports(performer, startDate, endDate);
+    }
 }
