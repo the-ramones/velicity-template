@@ -7,17 +7,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Spring-based application's front-end">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -27,93 +20,85 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Project name</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
-                        </form>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
+        <div class="header-container">
+            <div class="wrapper clearfix">
+                <!--<a href="#"><img src="img/Reports!.png" /></a>-->
+                <h1 class="title">Reports! Track your activities</h1>
+                <div id="nav">                    
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li>
+                            <a href="#">Get Reports!</a>    
+                            <!-- DROP-DOWN                
+                            <ul id="drop-nav">
+                                <li><a href="#">Add report</a></li>
+                                <li><a href="#">Get report</a></li>
+                                <li><a href="#">Search</a></li>
+                            </ul>
+                            #DROP_DOWN -->
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div> <!-- #nav -->
+            </div>        
         </div>
+        <!-- content -->
+        <div class="main-container">
+            <div class="main wrapper clearfix">
 
-        <div class="container">
+                <div id="article">
+                    <div>
+                        <h1>Reports!</h1>
+                        <p>Reports! is a Java web-application to store activities based on Spring WEB MVC Framework</p>
+                    </div>
+                    <hr />
+                    <div>
+                        <h2><a class="a-nav" href="#">Use case 1: "save report"</a></h2>
+                        <p>Fill in the form and click 'save' button to store a new activity record into the database</p>
+                    </div>
+                    
+                    <hr />
+                    <div>
+                        <h2><a class="a-nav" href="#">Use case 2: "retrieve reports"</a></h2>
+                        <p>Fill in the form and click 'get' button to get a report of activity records corresponding to a search criteria. If the number of reports more than !template! paging will be carried out</p>
+                    </div>
+                    
+                    <hr />
+                    <div> 
+                        <h2><a class="a-nav" href="#">Use case 3: "real-time search"</a></h2>
+                        <p>Start typing a search query into "search" field. Choose found elements in a drop-down list to narrow down a result list or click "search" to view a full result</p> 
+                    </div>
+                </div> <!-- #article -->
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-            </div>
+                <div class="aside">
+                    <h3>About Reports!</h3>
+                    <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
+                </div> <!-- #aside -->
+<!--                <div id="imgs">
+                    <a href="http://www.jquery.com"><img src="img/jquery_ajax.jpg" style="width:75%"/></a>
+                </div>-->
 
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-               </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-            </div>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
 
-            <hr>
-
-            <footer>
-                <p>&copy; Company 2012</p>
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3> Copyright &copy 2013 Paul Kulitski</h3>
             </footer>
-
-        </div> <!-- /container -->
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
 
+        <!-- Google Analitycs -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            (function(d, t) {
+                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                g.src = '//www.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
+        </script> <!-- # Google Analytics -->
     </body>
 </html>
