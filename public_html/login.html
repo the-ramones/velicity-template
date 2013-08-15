@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+    </head>
+    <body>
+        <h3>Login form</h3>
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="j_username">Email/Username</label>
+                <div class="controls">
+                    <input type="text" id="j_username" placeholder="Email or Username">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="j_password">Password</label>
+                <div class="controls">
+                    <input type="password" id="j_password" placeholder="Password">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox" style="border-radius: 3px;">
+                        <input type="checkbox" name="_spring_security_remember_me">Remember Me!
+                    </label>
+                    <button type="submit" class="btn">Sign in</button>
+                </div>
+            </div>
+        </form>       
+        <script type="text/javascript">
+            document.getElementById("j_username").focus();
+        </script>
+    </body>

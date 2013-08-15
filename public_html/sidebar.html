@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>        
+        <script src="js/libs/jquery-1.10.2.js"></script>
+        <script src="js/vendor/jquery-1.10.1.js"></script>
+    </head>
+    <body>
+        <!-- content -->
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+                <div class="aside">
+                    <h3>About Reports!</h3>
+                    <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
+                    <button id="hide_btn" class="btn-small" type="button" >Hide it!</button>
+                </div> <!-- #aside -->
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#hide_btn').click(function() {
+                    $(".aside").hide('slow');
+                })
+            });
+        </script>
+    </body>
+</html>
