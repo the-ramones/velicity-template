@@ -56,40 +56,33 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                <div id="article">
-                    <div>
-                        <h1>Reports!</h1>
-                        <p>Reports! is a Java web-application to store activities based on Spring WEB MVC Framework</p>
+                <!-- content -->
+                <h3>Login form</h3>
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="j_username">Email/Username</label>
+                        <div class="controls">
+                            <input type="text" id="j_username" placeholder="Email or Username">
+                        </div>
                     </div>
-                    <hr />
-                    <div>
-                        <h2><a class="a-nav" href="#">Use case 1: "save report"</a></h2>
-                        <p>Fill in the form and click 'save' button to store a new activity record into the database</p>
+                    <div class="control-group">
+                        <label class="control-label" for="j_password">Password</label>
+                        <div class="controls">
+                            <input type="password" id="j_password" placeholder="Password">
+                        </div>
                     </div>
-
-                    <hr />
-                    <div>
-                        <h2><a class="a-nav" href="#">Use case 2: "retrieve reports"</a></h2>
-                        <p>Fill in the form and click 'get' button to get a report of activity records corresponding to a search criteria. If the number of reports more than !template! paging will be carried out</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox" style="border-radius: 3px;">
+                                <input type="checkbox" name="_spring_security_remember_me">Remember Me!
+                            </label>
+                            <br /><button type="submit" style="margin: 0 auto;" class="btn">Sign in</button>
+                        </div>
                     </div>
-
-                    <hr />
-                    <div> 
-                        <h2><a class="a-nav" href="#">Use case 3: "real-time search"</a></h2>
-                        <p>Start typing a search query into "search" field. Choose found elements in a drop-down list to narrow down a result list or click "search" to view a full result</p> 
-                    </div>
-                </div> <!-- #article -->
-
-                <div class="aside">
-
-                    <h3>About Reports!</h3>
-                    <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
-                    <button id="hide_btn" class="btn" type="button" >Hide it!</button>
-                </div> <!-- #aside --
-                <!-- <div id="imgs">
-                        <a href="http://www.jquery.com"><img src="img/jquery_ajax.jpg" style="width:75%"/></a>
-                      </div>
-                -->
+                </form>       
+                <script type="text/javascript">
+                    document.getElementById("j_username").focus();
+                </script>        
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->

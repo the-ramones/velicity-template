@@ -15,6 +15,16 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
+        <style type="text/css">
+            .control-group {
+                float: left;
+                margin : 20px 20px;
+            }
+            
+            .control-group .btn {
+                margin-top : 26px;
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -56,40 +66,48 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                <div id="article">
-                    <div>
-                        <h1>Reports!</h1>
-                        <p>Reports! is a Java web-application to store activities based on Spring WEB MVC Framework</p>
+                <h2>Reports! search form</h2>
+                <!-- reports form -->
+                <form name="report-request" action="./search" method="POST" class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">Start date:</label>
+                        <div class="controls">
+                            <input type="date" name="startDate">                             
+                        </div>
                     </div>
-                    <hr />
-                    <div>
-                        <h2><a class="a-nav" href="#">Use case 1: "save report"</a></h2>
-                        <p>Fill in the form and click 'save' button to store a new activity record into the database</p>
+                    <div class="control-group">
+                        <label class="control-label">End date:</label>
+                        <div class="controls">
+                            <input type="date" name="endDate">
+                        </div>
                     </div>
-
-                    <hr />
-                    <div>
-                        <h2><a class="a-nav" href="#">Use case 2: "retrieve reports"</a></h2>
-                        <p>Fill in the form and click 'get' button to get a report of activity records corresponding to a search criteria. If the number of reports more than !template! paging will be carried out</p>
+                    <div class="control-group">
+                        <label class="control-label">Performer:</label>                        
+                        <div class="controls">
+                            <select name="performer">
+                                #foreach( $performer in $performers ) 
+                                <option value="$performer">$performer</option>
+                                #end
+                            </select>
+                        </div>
                     </div>
-
-                    <hr />
-                    <div> 
-                        <h2><a class="a-nav" href="#">Use case 3: "real-time search"</a></h2>
-                        <p>Start typing a search query into "search" field. Choose found elements in a drop-down list to narrow down a result list or click "search" to view a full result</p> 
+                    <div class="control-group">
+                        <label class="control-label">Time Period:</label>
+                        <div class="controls">
+                            <select name="timePeriod">
+                                <option value="last-qtr">Last Qtr</option>
+                                <option value="last-month">Last Month</option>
+                                <option value="last-calendar-year">Last Calendar Year</option>
+                                <option value="current-year-to-date">Current Year to Date</option>
+                                <option value="current-qtr-to-date">Current Qtr to Date</option>
+                                <option value="current-month-to-date">Current Month to Date</option>
+                            </select>
+                        </div>
                     </div>
-                </div> <!-- #article -->
-
-                <div class="aside">
-
-                    <h3>About Reports!</h3>
-                    <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
-                    <button id="hide_btn" class="btn" type="button" >Hide it!</button>
-                </div> <!-- #aside --
-                <!-- <div id="imgs">
-                        <a href="http://www.jquery.com"><img src="img/jquery_ajax.jpg" style="width:75%"/></a>
-                      </div>
-                -->
+                    <div class="control-group">
+                        <input class="btn" type="submit" name="reportSubmit" value="Submit">
+                    </div>
+                </form>           
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->

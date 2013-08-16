@@ -1,3 +1,27 @@
+/* ==============
+    FOOTER : STICKY FOOTER
+   ============== */
+
+/** {
+        margin: 0;
+}
+html, body {
+        height: 100%;
+}
+.wrapper {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -360px;  the bottom margin is the negative value of the footer's height 
+}
+.footer, .push {
+        height: 360px;  .push must be the same height as .footer 
+        clear: both;
+}*/
+
+/* ==============
+    FOOTER : Menu
+   ============== */
 .image-replacement {
     margin: 0 0 0 1%; padding:0;
     position:relative;
@@ -65,10 +89,9 @@
 /* ==============
     MOBILE: Menu
    ============== */
-
 nav {
     float: right;
-    margin: 10px 20px 10px 20px;    
+    margin: 10px 20px 10px 20px;   
 }
 
 nav ul ul {
@@ -82,7 +105,7 @@ nav ul li:hover > ul {
 nav ul {
     background: rgb(224, 133, 36);
     box-shadow: 0px 0px 9px rgba(34,34,34,0.5);
-    padding: 0 20px;
+    padding: 0 40px;
     border-radius: 8px;  
     list-style: none;
     position: relative;
@@ -126,7 +149,6 @@ nav ul ul {
     width: 60%;
 }
 
-
 nav ul ul:last-child {
     border-radius: 0 0 4px 4px;
 }
@@ -145,13 +167,9 @@ nav ul ul li:last-child {
 }
 
 nav ul ul li a {
-    padding: 10px 0; 
+    padding: 10px 40px; 
     color: #fff;
 }	
-
-nav ul ul li a {
-    /* TODO centered text */
-}
 
 nav ul ul ul {
     position: absolute; 
@@ -221,13 +239,10 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+/* ===== Initializr Styles ================================================== 
    ========================================================================== */
-
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px "Helvetica Neue", Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -236,7 +251,7 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Brown Theme
    =================== */
 
 .header-container {
@@ -262,7 +277,6 @@ body {
 /* ==============
     MOBILE: Main
    ============== */
-
 .main {
     padding: 30px 0;
 }
@@ -283,14 +297,9 @@ body {
     padding: 10px 0;
 }
 
-.footer-container {
-    /*border-radius: 8px 8px 0 0;*/
-}
-
 /* ===============
     ALL: IE Fixes
    =============== */
-
 .ie7 .title {
     padding-top: 30px;
 }
@@ -308,8 +317,9 @@ body {
     text-shadow: 5px 5px 5px rgba(204, 103, 26, 0.25);
 }
 
-/* borrowed from Bootstrap */
-
+/* ==========================================================================
+   Borrowed from Bootstrap 
+   ========================================================================== */
 dl {
     margin-bottom: 20px;
 }
@@ -408,7 +418,7 @@ form {
     margin: 0 0 20px;
 }
 
-btn{ 
+.btn { 
     display: inline-block;
     *display: inline;
     padding: 4px 12px;
@@ -416,65 +426,95 @@ btn{
     *margin-left: .3em;
     font-size: 14px;
     line-height: 20px;
-    color: #333333;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     vertical-align: middle;
     cursor: pointer;
-    background-color: #f5f5f5;
-    *background-color: #e6e6e6;
-    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-    background-repeat: repeat-x;
-    border: 1px solid #cccccc;
+    border: 0;
     *border: 0;
-    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    border-bottom-color: #b3b3b3;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    *zoom: 1;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btn-small {
-    background-color: rgba(224, 133, 36, 0.7);
-    border-color: rgba(224, 133, 36, 0.7);
-    padding: 2px 10px;
-    font-size: 11.9px;
+    background-color: rgba(224, 133, 36, 1);    
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
+    -o-border-radius: 3px;
     border-radius: 3px;
+    *zoom: 1;  
+    font-size: 11.9px;
 }
 
+.btn:hover {
+    opacity: 0.9;
+    border: 1px 
+}
+
+#hide_btn {
+    float:right;
+    background-color: rgba(224, 133, 36, 0.7);
+}
+
+.btn_search {
+    padding: 4px 20px 4px 20px;
+}
+
+input.search-query {
+    padding: 4px 12px;
+    width: 40%;
+}
+
+.input-append,
+.input-prepend {
+    width: 47%;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1em;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px #ccc;    
+}
+
+.input-append input ,
+.input-prepend input {
+    padding: 2px 2px;
+    margin: -20px 0;
+}
+
+.input-append .add-on,
+.input-prepend .add-on {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    min-width: 16px;
+    padding: 4px 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    margin: 0 0;
+}
+
+.input-prepend .add-on:first-child,
+.input-prepend .btn:first-child {
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+
+
+
+
+
+
+
+
+
+/* CSS-Tricks */
 .center {
     position: absolute;
     left: 50%;
     top: 50%;
-
-    /*
-    Nope =(
-    margin-left: -25%;
-    margin-top: -25%;
-    */
-
-    /* 
-    Yep!
-    */
     transform: translate(-50%, -50%);
-
-    /*
-    Not even necessary really. 
-    e.g. Height could be left out!
-    */
     width: 40%;
     height: 50%;
 }
@@ -482,44 +522,30 @@ btn{
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
+/* smartphone-like devices */
 @media only screen and (min-width: 480px) {
 
     /* ====================
         INTERMEDIATE: Menu
        ==================== */
 
-    #nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    #nav li:first-child a {
-        margin-left: 0;
-    }
-
-    #nav li:last-child a {
-        margin-right: 0;
-    }
 
     /* ========================
         INTERMEDIATE: IE Fixes
        ======================== */
-
-    #nav ul li {
-        display: inline;
-    }
 
     .oldie #nav a {
         margin: 0 0.7%;
     }
 }
 
+/* iPad-like */
 @media only screen and (min-width: 768px) {
+
+    /* ====================
+    INTERMEDIATE: Menu
+       ==================== */
+
 
     /* ====================
         WIDE: CSS3 Effects
@@ -532,17 +558,8 @@ btn{
         box-shadow: 0 5px 10px #aaa;
     }
 
-    /* ============
-        WIDE: Menu
-       ============ */
-
     .title {
         float: left;
-    }
-
-    #nav {
-        float: right;
-        width: 56%;
     }
 
     /* ============
@@ -560,15 +577,18 @@ btn{
     }
 }
 
+/* Desktop/laptop device */
 @media only screen and (min-width: 1140px) {
+
+    /* ====================
+        INTERMEDIATE: Menu
+       ==================== */
+
 
     /* ===============
         Maximal Width
        =============== */
 
-    #nav {
-        width: 38%;
-    }
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
@@ -698,11 +718,12 @@ btn{
     }
 
     @page {
-        margtabl
+        margin: 0.5cm;
+    }
 
-        p,
-        h2,
-        h3 {
+    p,
+    h2,
+    h3 {
         orphans: 3;
         widows: 3;
     }
