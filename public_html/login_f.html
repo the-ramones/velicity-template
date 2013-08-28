@@ -12,80 +12,79 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="header-container">
-            <div class="wrapper clearfix">
-                <a href="#home"><div id="logo"></div></a>
-                <h1 class="title">Track your activities</h1>   
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Reports!</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a>
-                                    <ul>
-                                        <li><a href="#">Add activity</a></li>
-                                        <li><a href="#">Build report</a></li>
-                                        <li><a href="#">Ajax search</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Ajax search</a></li>                                
-                            </ul>
-                        </li>
-                        <li><a href="#">Contact</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a></li>
-                                <li><a href="#">Ajax search</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>        
-        </div>
-        <!-- content -->
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+        <div class="page-wrap">
+            <div class="header-container">
+                <div class="wrapper clearfix">
+                    <a href="#home"><div id="logo"></div></a>
+                    <h1 class="title">Track your activities</h1>   
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Reports!</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a>
+                                        <ul>
+                                            <li><a href="#">Add activity</a></li>
+                                            <li><a href="#">Build report</a></li>
+                                            <li><a href="#">Ajax search</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Ajax search</a></li>                                
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a></li>
+                                    <li><a href="#">Ajax search</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>        
+            </div>
+            <!-- content -->
+            <div class="main-container">
+                <div class="main wrapper clearfix">
 
-                <!-- content -->
-                <h3>Login form</h3>
-                <form class="form-horizontal">
-                    <div class="control-group">
-                        <label class="control-label" for="j_username">Email/Username</label>
-                        <div class="controls">
-                            <input type="text" id="j_username" placeholder="Email or Username">
-                        </div>
+                    <div class="form-container">
+                        <!-- content -->
+                        <h2>Login form</h2>
+                        <form name="login-form" method="POST" action="/login">
+                            <div class="form-line clearfix">
+                                <label for="j_username">Email/Username</label>
+                                <input type="text" id="j_username" name="j_username" placeholder="Email or Username" autocomplete="off">
+                            </div>
+                            <div class="form-line clearfix">
+                                <label for="j_password">Password</label>
+                                <input type="password" id="j_password" name="j_password" placeholder="Password" autocomplete="off">
+                            </div>
+                            <div class="form-line clearfix">
+                                <label for="_spring_security_remember_me">Remember Me!</label>
+                                <input type="checkbox" name="_spring_security_remember_me" autocomplete="off"/>
+                            </div>
+                            <input name="login-submit" class="btn" type="submit" value="Sign in!"/>
+                        </form>    
                     </div>
-                    <div class="control-group">
-                        <label class="control-label" for="j_password">Password</label>
-                        <div class="controls">
-                            <input type="password" id="j_password" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <label class="checkbox" style="border-radius: 3px;">
-                                <input type="checkbox" name="_spring_security_remember_me">Remember Me!
-                            </label>
-                            <br /><button type="submit" style="margin: 0 auto;" class="btn">Sign in</button>
-                        </div>
-                    </div>
-                </form>       
-                <script type="text/javascript">
-                    document.getElementById("j_username").focus();
-                </script>        
+                    <script type="text/javascript">
+                        document.getElementById("j_username").focus();
+                    </script>        
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
+        </div> <!-- page-wrap -->
 
         <div class="footer-container">
             <div class="wrapper clearfix">
@@ -97,46 +96,14 @@
             </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
-
+        <script src="js/jquery.validate.js"></script>        
+        <!--localize validation messages-->
+        <script src="js/localization/messages.js"></script>
         <script src="js/main.js"></script>
-
+        <script type="text/javascript" src="js/main-validation.js"></script>
+        <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
-            function wider() {
-                $('div#article').animate({"width": "90%"});
-            }
-            $(document).ready(function() {
-                $('#hide_btn').click(function() {
-                    $(".aside").hide('slow');
-                    setTimeout(wider, 600);
-                });
-                $('#facebook').mouseenter(function() {
-                    $(this).addClass("facebook-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("facebook-active").addClass("facebook-dark");
-                });
-                $('#twitter').mouseenter(function() {
-                    $(this).addClass("twitter-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("twitter-active").addClass("twitter-dark");
-                });
-                $('#google').mouseenter(function() {
-                    $(this).addClass("google-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("google-active").addClass("google-dark");
-                });
-
-            });</script>
-
-        <!-- Google Analitycs -->
-        <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-            (function(d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g, s)
-            }(document, 'script'));
-        </script> <!-- # Google Analytics -->
+        </script>  
     </body>
 </html>

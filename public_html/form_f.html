@@ -73,8 +73,8 @@
                         </div>
                         <div class="form-line clearfix">
                             <label>Performer:</label>                        
-                            <select name="performer">
-                                <option value=""></option>
+                            <select name="performer" >
+                                <option value="" disabled selected>Select a performer</option>
                                 #foreach( $performer in $performers ) 
                                 <option value="$performer">$performer</option>
                                 #end
@@ -113,23 +113,7 @@
         <script src="js/main.js"></script>
         <script type="text/javascript" src="js/main-validation.js"></script>
         <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
-        <script type="text/javascript">
-            $("form[name='report-request']").validate({
-                lang : 'en',
-                debug: true,
-                rules: {
-                    performer: {},
-                    timePeriod: {},
-                    startDate: {
-                        required: true,
-                        reportdate: true
-                    },
-                    endDate: {
-                        required: true,
-                        reportdate: true
-                    }
-                }
-            });
+        <script type="text/javascript">         
         </script>
 
     </body>

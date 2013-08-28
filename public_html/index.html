@@ -11,12 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">        
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
-        <script src="js/vendor/jquery-1.10.1.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -88,11 +88,7 @@
                         <h3>About Reports!</h3>
                         <p>Reports! is a Spring Framework based application developed for storing and tracking activities. Reports! allows to construct activity reports and get activity statistics</p>
                         <button id="hide_btn" class="btn-small" type="button" >Hide it!</button>
-                    </div> <!-- #aside --
-                    <!-- <div id="imgs">
-                            <a href="http://www.jquery.com"><img src="img/jquery_ajax.jpg" style="width:75%"/></a>
-                          </div>
-                    -->
+                    </div> <!-- #aside -->
 
                     <div class="sticky">
                         <a href="#">Get a hint!</a>
@@ -112,59 +108,15 @@
             </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
-
+        <script src="js/jquery.validate.js"></script>        
+        <!--localize validation messages-->
+        <script src="js/localization/messages.js"></script>
         <script src="js/main.js"></script>
-
+        <script type="text/javascript" src="js/main-validation.js"></script>
+        <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
-            function wider() {
-                $('div#article').animate({"width": "95%"});
-            }
-            function fadeIn() {
-                $(".aside").fadeIn(400);
-            }
-            $(document).ready(function() {
-                $('#hide_btn').click(function() {
-                    $(".aside").fadeOut(600);
-                    setTimeout(wider, 600);
-                    $(".sticky").css("visibility", "visible");
-                    //  $(".sticky").animate({visibility: "visible",left: "-=2%"}, 1000);
-                });
-                $('#facebook').mouseenter(function() {
-                    $(this).addClass("facebook-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("facebook-active").addClass("facebook-dark");
-                });
-                $('#twitter').mouseenter(function() {
-                    $(this).addClass("twitter-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("twitter-active").addClass("twitter-dark");
-                });
-                $('#google').mouseenter(function() {
-                    $(this).addClass("google-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("google-active").addClass("google-dark");
-                });
-                $(".sticky a").click(function() {
-                    $(".sticky").animate({left: "+=2%"}, 1000, function() {
-                        $(this).css({visibility: "hidden", left: "92%"});
-                        $('div#article').animate({"width": "57%"}, 600);
-                        setTimeout(fadeIn, 1000);
-                    });
-                });
+        </script>  
 
-            });
-        </script>
-
-        <!-- Google Analitycs -->
-        <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-            (function(d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g, s)
-            }(document, 'script'));
-        </script> <!-- # Google Analytics -->
     </body>
 </html>

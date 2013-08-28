@@ -33,7 +33,7 @@ input[type="checkbox"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin: 4px 0 0;
+    margin: 4px 0 0 0;
     line-height: normal;
 }
 
@@ -69,10 +69,15 @@ input[type="checkbox"] {
 }
 
 .form-line input[type="text"],
-.form-line input[type="date"] {
+.form-line input[type="date"],
+.form-line input[type="password"] {
     width: 200px;
     float: left;
     margin: 10px 10px 0 10px;
+}
+
+.form-line input[type="checkbox"] {
+    margin: 16px 10px 0 10px;
 }
 
 .form-line select {
@@ -83,6 +88,8 @@ input[type="checkbox"] {
 
 .form-line input[type="text"]:focus,
 .form-line input[type="date"]:focus,
+.form-line input[type="password"]:focus,
+.form-line input[type="checkbox"]:focus,
 .form-line select:focus {
     box-shadow: 0 0 5px rgba(224, 133, 36, 1);
 }
@@ -94,7 +101,7 @@ input[type="checkbox"] {
     padding-right: 20px;
     margin: 10px;
 }
-select
+
 .form-line label.error {
     margin: 0 auto;
     display: block;
@@ -102,7 +109,8 @@ select
     text-align: center;
 }
 
-.hor-center {    
+.hor-center {
+    display:block;
     margin: auto auto;
 }
 
@@ -110,6 +118,10 @@ select
 input, select {
     border-radius: 3px; 
     font-size: 100%;
+}
+
+select {
+    background-color: rgb(255,255,255);
 }
 
 button::-moz-focus-inner,

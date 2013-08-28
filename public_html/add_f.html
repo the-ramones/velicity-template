@@ -16,7 +16,7 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
-        <script src="js/jquery-ui-1.10.3.custom.js.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -65,19 +65,19 @@
                         <form name="report-add" action="/report/add" method="POST">
                             <div class="form-line clearfix">
                                 <label>Start date:</label>
-                                <input id="startDate" name="startDate" value="" type="text" placeholder="">                            
+                                <input id="startDate" name="startDate" value="" type="text" placeholder="Input a start date" autocomplete="off">                            
                             </div>
                             <div class="form-line clearfix">
                                 <label>End date:</label>
-                                <input id="endDate" name="endDate" value="" type="text">             
+                                <input id="endDate" name="endDate" value="" type="text" placeholder="Input an end date" autocomplete="off">             
                             </div>
                             <div class="form-line clearfix">
                                 <label>Performer:</label>
-                                <input id="performer" name="performer" value="" type="text">
+                                <input id="performer" name="performer" value="" type="text" placeholder="Input a performer">
                             </div>
                             <div class="form-line clearfix">
                                 <label>Activity:</label>
-                                <input id="activity" name="activity" value="" type="text">     
+                                <input id="activity" name="activity" value="" type="text" placeholder="Input an activity">     
                             </div>
                             <input name="report-submit" class="btn" value="Add" type="submit">
                         </form>           
