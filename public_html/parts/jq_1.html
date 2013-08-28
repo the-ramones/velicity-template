@@ -4,38 +4,50 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style type="text/css">
+            * {
+                outline: none;                           
+                margin: 0;
+                padding: 0;
+            }
+
+            ::-webkit-input-placeholder { /* WebKit browsers */
+                color: #ddd;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color: #ddd;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color: #ddd;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10+ */
+                color: #ddd;
+            }
+
             input[type="text"] {
-                background-attachment: scroll;
-                background-clip: border-box;
+                color: rgb(255, 255, 255);
                 background-color: rgb(234, 134, 34);
-                background-image: none;
-                background-origin: padding-box;
-                background-position: 0% 0%;
-                background-repeat: repeat;
-                background-size: auto auto;
-                border-bottom-color: rgb(204, 204, 204);
-                border-bottom-left-radius: 25.5px;
-                border-bottom-right-radius: 25.5px;
+
                 border-bottom-style: solid;
                 border-bottom-width: 1px;
-                border-image-outset: 0 0 0 0;
-                border-image-repeat: stretch stretch;
                 border-image-slice: 100% 100% 100% 100%;
                 border-image-source: none;
                 border-image-width: 1 1 1 1;
-                border-left-color: rgb(204, 204, 204);
-                border-left-style: solid;
-                border-left-width: 1px;
-                border-right-color: rgb(204, 204, 204);
-                border-right-style: solid;
-                border-right-width: 1px;
-                border-top-color: rgb(204, 204, 204);
+                border-color: rgb(204, 204, 204);
+                border-style: solid;
+                border-width: 1px;
+                border-bottom-left-radius: 25.5px;
+                border-bottom-right-radius: 25.5px;
                 border-top-left-radius: 25.5px;
                 border-top-right-radius: 25.5px;
-                border-top-style: solid;
-                border-top-width: 1px;
+
                 box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
-                color: rgb(255, 255, 255);
+
+                height: 40px;
+                width: 720px;
+
+                margin: 0 0 0 0;
+                padding: 11px 0 11px 40px;
+
                 font-family: sans-serif;
                 font-size: 22px;
                 font-size-adjust: none;
@@ -43,22 +55,15 @@
                 font-style: normal;
                 font-variant: normal;
                 font-weight: 400;
-                line-height: 27px;
-                margin-bottom: 0px;
-                margin-left: 0px;
-                margin-right: 0px;
-                margin-top: 0px;
-                padding-bottom: 11px;
-                padding-left: 40px;
-                padding-right: 0px;
-                padding-top: 11px;
+                line-height: normal;
                 text-align: start;
+
                 transition-delay: 0s, 0s;
                 transition-duration: 0.2s, 0.2s;
                 transition-property: border, box-shadow;
                 transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
                 vertical-align: baseline;
-                width: 720px;
+
                 -moz-border-bottom-colors: none;
                 -moz-border-left-colors: none;
                 -moz-border-right-colors: none;
@@ -66,51 +71,117 @@
                 -moz-box-sizing: border-box;
                 -moz-font-feature-settings: normal;
                 -moz-font-language-override: normal;
+                -webkit-border-bottom-colors: none;
+                -webkit-border-left-colors: none;
+                -webkit-border-right-colors: none;
+                -webkit-border-top-colors: none;
+                -webkit-box-sizing: border-box;
+                -webkit-font-feature-settings: normal;
+                -webkit-font-language-override: normal;
             }
 
             input[type="text"]:focus {
                 box-shadow: 0 0 6px rgb(244,164,54);
-            }           
+            }   
+
             button {
                 background-color: rgb(234,134,34);
-                border-radius: 25.5px;
-                padding-bottom: 11px;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 11px;
                 border: 1px solid rgb(204, 204, 204); 
+                border-radius: 25.5px;
+
+                padding: 11px 20px 11px 20px;
+                margin-left: 10px;
+
+                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
+
                 transition-delay: 0s, 0s;
                 transition-duration: 0.2s, 0.2s;
                 transition-property: border, box-shadow;
                 transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
-                vertical-align: baseline;
+
+                vertical-align: top;
+
                 width:120px;
-                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
-                margin-left: 10px;
-                height: 51px;
+                height: 40px;                
             }
-            
+
             button:hover {
                 box-shadow: 0 0 6px rgb(244,164,54);
             }
-            
-            .input-append,
-            .input-prepend {
+
+            .subnav {
+                background: rgb(102, 102, 102);
+                width: 720px;
+                height: 50px;
                 display: inline-block;
-                margin-bottom: 10px;
-                font-size: 0;
-                white-space: nowrap;
-                vertical-align: middle;                
+                position: absolute;
+                left: 50%;
+                top: 384px;
+                margin: -25px 0 0 -25%;
+                padding: 0 0;
+                transition: all 0.1s;
+                z-index: 1;
+                opacity: 0;
             }
 
+            .subnav li {    
+                background: rgb(102, 102, 102);
+                border-left: 1px solid #2e2e2e;
+                border-right: 1px solid #2e2e2e;
+                border-top: 1px solid #2e2e2e;
+                list-style-type: none;
+                width: 100%;
+                position: relative;
+                /* bad bit */
+                right: 1px;
+                float: none;
+                visibility: hidden;
+            }
+
+            .subnav li:hover {
+                background: #2e2e2e;
+            }
+
+            .subnav li a {
+                font-size: 22px;
+                color: white;
+                display: block;
+                line-height: 50px;
+                padding: 0 26px;
+                text-decoration: none;
+                font-family: 'Source Sans Pro', sans-serif, sans;   
+            }
+
+            .subnav:hover li {
+                visibility: visible;
+                top: 100%;
+            }
+            
+            .container {
+                padding: 100px;
+            }
         </style>
     </head>
     <body>
-        <div class="wrapper">
-            <div class="input-append">
-                <input type="text" placeholder="Search" value="" name="s"></input>
-                <button type="button" name="search" action="javascript: doAjax()">Search</button> 
-            </div>
+        <div class="container">
+
+            <h2>Search using AJAX</h2>
+            <form name="search-form" method="POST" action="search" autocomplete="off">
+                <input type="text" name="search" value="" placeholder="Search" onkeypress="doSearch()"/>
+            </form>
+            <ul class="subnav">
+                <li><a href="#">Nothing has been found (:</a></li>
+                <li><a href="#">Nothing has been found (:</a></li>
+                <li><a href="#">Nothing has been found (:</a></li>
+                <li><a href="#">Nothing has been found (:</a></li>
+            </ul>
         </div>
+
+        <script type="text/javascript">
+                    function animate() {
+                        var nav = document.getElementsByClassName("subnav")[0];
+                        nav.style.visibility = "visible";
+                    }
+        </script>
     </body>
 </html>
