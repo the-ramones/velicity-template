@@ -20,71 +20,71 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <div class="page-wrap">
+            <div class="header-container">
+                <div class="wrapper clearfix">
+                    <a href="#home"><div id="logo"></div></a>
+                    <h1 class="title">Track your activities</h1>   
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Reports!</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a>
+                                        <ul>
+                                            <li><a href="#">Add activity</a></li>
+                                            <li><a href="#">Build report</a></li>
+                                            <li><a href="#">Ajax search</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Ajax search</a></li>                                
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a></li>
+                                    <li><a href="#">Ajax search</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>        
+            </div>
+            <!-- content -->
+            <div class="main-container">
+                <div class="main wrapper clearfix">
 
-        <div class="header-container">
-            <div class="wrapper clearfix">
-                <a href="#home"><div id="logo"></div></a>
-                <h1 class="title">Track your activities</h1>   
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Reports!</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a>
-                                    <ul>
-                                        <li><a href="#">Add activity</a></li>
-                                        <li><a href="#">Build report</a></li>
-                                        <li><a href="#">Ajax search</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Ajax search</a></li>                                
-                            </ul>
-                        </li>
-                        <li><a href="#">Contact</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a></li>
-                                <li><a href="#">Ajax search</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>        
+                    ## activities list template
+                    <h2>List of activities</h2>
+                    <table class="table">
+                        <caption>Reports! records</caption>
+                        <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>start date</td>
+                                <td>end date</td>
+                                <td>performer</td>
+                                <td>activity</td>
+                            </tr>
+                        <tbody>
+                            #foreach($report in $reports)
+                            <tr>
+                                <td>${report.id}</td>
+                                <td>${report.startDate}</td>
+                                <td>${report.endDate}</td>
+                                <td>${report.performer}</td>
+                                <td>${report.activity}</td>
+                            </tr>
+                            #end
+                        </tbody>
+                        </thead>
+                    </table>
+
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
         </div>
-        <!-- content -->
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                ## activities list template
-                <h2>List of activities</h2>
-                <table class="table">
-                    <caption>Reports! records</caption>
-                    <thead>
-                        <tr>
-                            <td>id</td>
-                            <td>start date</td>
-                            <td>end date</td>
-                            <td>performer</td>
-                            <td>activity</td>
-                        </tr>
-                    <tbody>
-                        #foreach($report in $reports)
-                        <tr>
-                            <td>${report.id}</td>
-                            <td>${report.startDate}</td>
-                            <td>${report.endDate}</td>
-                            <td>${report.performer}</td>
-                            <td>${report.activity}</td>
-                        </tr>
-                        #end
-                    </tbody>
-                    </thead>
-                </table>
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-
         <div class="footer-container">
             <div class="wrapper clearfix">
                 <a href="#home"><div id="logo_small"></div></a>
