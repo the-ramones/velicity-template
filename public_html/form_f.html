@@ -22,81 +22,82 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <div class="page-wrap">
+            <div class="header-container">
+                <div class="wrapper clearfix">
+                    <a href="#home"><div id="logo"></div></a>
+                    <h1 class="title">Track your activities</h1>   
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Reports!</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a>
+                                        <ul>
+                                            <li><a href="#">Add activity</a></li>
+                                            <li><a href="#">Build report</a></li>
+                                            <li><a href="#">Ajax search</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Ajax search</a></li>                                
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a></li>
+                                    <li><a href="#">Ajax search</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>        
+            </div>
+            <!-- content -->
+            <div class="main-container">
+                <div class="main wrapper clearfix">
 
-        <div class="header-container">
-            <div class="wrapper clearfix">
-                <a href="#home"><div id="logo"></div></a>
-                <h1 class="title">Track your activities</h1>   
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Reports!</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a>
-                                    <ul>
-                                        <li><a href="#">Add activity</a></li>
-                                        <li><a href="#">Build report</a></li>
-                                        <li><a href="#">Ajax search</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Ajax search</a></li>                                
-                            </ul>
-                        </li>
-                        <li><a href="#">Contact</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a></li>
-                                <li><a href="#">Ajax search</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>        
+                    <div class="form-container">
+                        <h2>Reports! search form</h2>
+                        <!-- reports form -->
+
+                        <form name="report-request" action="#springUrl('/report/search')" method="POST" class="form-horizontal">
+                            <div class="form-line clearfix">
+                                <label>Start date:</label>
+                                <input type="text" name="startDate" placeholder="Input a start date" autocomplete="off">                             
+                            </div>
+                            <div class="form-line clearfix">
+                                <label>End date:</label>
+                                <input type="text" name="endDate" placeholder="Input a end date" autocomplete="off">
+                            </div>
+                            <div class="form-line clearfix">
+                                <label>Performer:</label>                        
+                                <select name="performer" >
+                                    <option value="" disabled selected>Select a performer</option>
+                                    #foreach( $performer in $performers ) 
+                                    <option value="$performer">$performer</option>
+                                    #end
+                                </select>
+                            </div>
+                            <div class="form-line clearfix">
+                                <label>Time Period:</label>
+                                <select name="timePeriod">
+                                    <option value="last-qtr">Last Qtr</option>
+                                    <option value="last-month">Last Month</option>
+                                    <option value="last-calendar-year">Last Calendar Year</option>
+                                    <option value="current-year-to-date">Current Year to Date</option>
+                                    <option value="current-qtr-to-date">Current Qtr to Date</option>
+                                    <option value="current-month-to-date">Current Month to Date</option>
+                                </select>
+                            </div>
+                            <input class="btn" type="submit" name="reportSubmit" value="Search"/>
+                        </form>  
+                    </div>
+
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
         </div>
-        <!-- content -->
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                <div class="form-container">
-                    <h2>Reports! search form</h2>
-                    <!-- reports form -->
-
-                    <form name="report-request" action="#springUrl('/report/search')" method="POST" class="form-horizontal">
-                        <div class="form-line clearfix">
-                            <label>Start date:</label>
-                            <input type="text" name="startDate" placeholder="Input a start date" autocomplete="off">                             
-                        </div>
-                        <div class="form-line clearfix">
-                            <label>End date:</label>
-                            <input type="text" name="endDate" placeholder="Input a end date" autocomplete="off">
-                        </div>
-                        <div class="form-line clearfix">
-                            <label>Performer:</label>                        
-                            <select name="performer">
-                                <option value=""></option>
-                                #foreach( $performer in $performers ) 
-                                <option value="$performer">$performer</option>
-                                #end
-                            </select>
-                        </div>
-                        <div class="form-line clearfix">
-                            <label>Time Period:</label>
-                            <select name="timePeriod">
-                                <option value="last-qtr">Last Qtr</option>
-                                <option value="last-month">Last Month</option>
-                                <option value="last-calendar-year">Last Calendar Year</option>
-                                <option value="current-year-to-date">Current Year to Date</option>
-                                <option value="current-qtr-to-date">Current Qtr to Date</option>
-                                <option value="current-month-to-date">Current Month to Date</option>
-                            </select>
-                        </div>
-                        <input class="btn" type="submit" name="reportSubmit" value="Search"/>
-                    </form>  
-                </div>
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
 
         <div class="footer-container">
             <div class="wrapper clearfix">
@@ -114,22 +115,6 @@
         <script type="text/javascript" src="js/main-validation.js"></script>
         <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
         <script type="text/javascript">
-            $("form[name='report-request']").validate({
-                lang : 'en',
-                debug: true,
-                rules: {
-                    performer: {},
-                    timePeriod: {},
-                    startDate: {
-                        required: true,
-                        reportdate: true    
-                    },
-                    endDate: {
-                        required: true,
-                        reportdate: true
-                    }
-                }
-            });
         </script>
 
     </body>

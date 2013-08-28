@@ -12,113 +12,194 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+        <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
 
-        <div class="header-container">
-            <div class="wrapper clearfix">
-                <a href="#home"><div id="logo"></div></a>
-                <h1 class="title">Track your activities</h1>   
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Reports!</a>
+        <style type="text/css">
+            input[type="text"] {
+                background-attachment: scroll;
+                background-clip: border-box;
+                background-color: rgb(234, 134, 34);
+                background-image: none;
+                background-origin: padding-box;
+                background-position: 0% 0%;
+                background-repeat: repeat;
+                background-size: auto auto;
+                border-bottom-color: rgb(204, 204, 204);
+                border-bottom-left-radius: 25.5px;
+                border-bottom-right-radius: 25.5px;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-image-outset: 0 0 0 0;
+                border-image-repeat: stretch stretch;
+                border-image-slice: 100% 100% 100% 100%;
+                border-image-source: none;
+                border-image-width: 1 1 1 1;
+                border-left-color: rgb(204, 204, 204);
+                border-left-style: solid;
+                border-left-width: 1px;
+                border-right-color: rgb(204, 204, 204);
+                border-right-style: solid;
+                border-right-width: 1px;
+                border-top-color: rgb(204, 204, 204);
+                border-top-left-radius: 25.5px;
+                border-top-right-radius: 25.5px;
+                border-top-style: solid;
+                border-top-width: 1px;
+                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
+                color: rgb(255, 255, 255);
+                font-family: sans-serif;
+                font-size: 22px;
+                font-size-adjust: none;
+                font-stretch: normal;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                line-height: 27px;
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                padding-bottom: 11px;
+                padding-left: 40px;
+                padding-right: 0px;
+                padding-top: 11px;
+                text-align: start;
+                transition-delay: 0s, 0s;
+                transition-duration: 0.2s, 0.2s;
+                transition-property: border, box-shadow;
+                transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+                vertical-align: baseline;
+                width: 720px;
+                -moz-border-bottom-colors: none;
+                -moz-border-left-colors: none;
+                -moz-border-right-colors: none;
+                -moz-border-top-colors: none;
+                -moz-box-sizing: border-box;
+                -moz-font-feature-settings: normal;
+                -moz-font-language-override: normal;
+            }
+
+            input[type="text"]:focus {
+                box-shadow: 0 0 6px rgb(244,164,54);
+            }           
+            button {
+                background-color: rgb(234,134,34);
+                border-radius: 25.5px;
+                padding-bottom: 11px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 11px;
+                border: 1px solid rgb(204, 204, 204); 
+                transition-delay: 0s, 0s;
+                transition-duration: 0.2s, 0.2s;
+                transition-property: border, box-shadow;
+                transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+                vertical-align: baseline;
+                width:120px;
+                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
+                margin-left: 10px;
+                height: 51px;
+            }
+
+            button:hover {
+                box-shadow: 0 0 6px rgb(244,164,54);
+            }
+
+            .input-append,
+            .input-prepend {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 0;
+                white-space: nowrap;
+                vertical-align: middle;                
+            }
+
+        </style>
+    </head>
+        <body>
+<!--            [if lt IE 7]>
+                <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+            <div class="page-wrap">
+                <div class="header-container">
+                    <div class="wrapper clearfix">
+                        <a href="#home"><div id="logo"></div></a>
+                        <h1 class="title">Track your activities</h1>   
+                        <nav>
                             <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Reports!</a>
+                                    <ul>
+                                        <li><a href="#">Add activity</a></li>
+                                        <li><a href="#">Build report</a>
+                                            <ul>
+                                                <li><a href="#">Add activity</a></li>
+                                                <li><a href="#">Build report</a></li>
+                                                <li><a href="#">Ajax search</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Ajax search</a></li>                                
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact</a>
                                     <ul>
                                         <li><a href="#">Add activity</a></li>
                                         <li><a href="#">Build report</a></li>
                                         <li><a href="#">Ajax search</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Ajax search</a></li>                                
                             </ul>
-                        </li>
-                        <li><a href="#">Contact</a>
-                            <ul>
-                                <li><a href="#">Add activity</a></li>
-                                <li><a href="#">Build report</a></li>
-                                <li><a href="#">Ajax search</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>        
-        </div>
-        <!-- content -->
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                <div class="search">
-                    <h3>Search form</h3>
-                    <form>
-                            <input type="text" class="search-query" placeholder="Enter a search query"> 
-                            <button type="submit" class="btn">Search!</button>
-                    </form>
-                </div> <!-- #search -->
-
-                <div class="push"></div>
-            </div> <!-- #main -->
-
-        </div> <!-- #main-container -->
-
-        <div class="footer-container">
-            <div class="wrapper clearfix">
-                <a href="#home"><div id="logo_small"></div></a>
-                <a href="#contact"><h3 style="float:left; text-decoration: none; color: #dddddd;"> Paul Kulitski 2013</h3></a>
-                <h3 id="facebook" class="image-replacement facebook-dark"><a href="https://www.facebook.com/pavel.kulicki"><span>Facebook Profile</span></a></h3>
-                <h3 id="google" class="image-replacement google-dark"><a href="mailto:p.kulitski@gmail.com"><span>Google Mail</span></a></h3>
-                <h3 id="twitter" class="image-replacement twitter-dark"><a href="https://twitter.com/PaulKulitski"><span>Twitter Profile</span></a></h3>
+                        </nav>
+                    </div>        
+                </div>
+                 content 
+                <div class="main-container">
+                    <div class="main wrapper clearfix">
+    
+                        <div class="search-wrap">
+                            <div class="input-append">
+                                <input type="text" placeholder="Search" value="" name="s" />
+                                <button type="button" name="search" onclick="javascript: doAjax()">Search</button>
+                            </div>
+                        </div>
+    
+                        <div class="aside">
+                            <h3>Add a new activity!</h3>
+                            <p>Fill in the form and push the 'Add' button. The entered data will be validated and, if everything is OK, stored to the Reports! database </p>
+                            <button id="hide_btn" class="btn-small" type="button">Hide it!</button>
+                        </div>
+    
+                        <div class="sticky">
+                            <a href="#">Get a hint!</a>
+                        </div>
+    
+                    </div> <!-- #main --> 
+                </div> <!--#main-container--> 
+            </div> <!--#page-wrap--> 
+    
+            <div class="footer-container">
+                <div class="wrapper clearfix">
+                    <a href="#home"><div id="logo_small"></div></a>
+                    <a href="#contact"><h3 style="float:left; text-decoration: none; color: #dddddd;"> Paul Kulitski 2013</h3></a>
+                    <h3 id="facebook" class="image-replacement facebook-dark"><a href="https://www.facebook.com/pavel.kulicki"><span>Facebook Profile</span></a></h3>
+                    <h3 id="google" class="image-replacement google-dark"><a href="mailto:p.kulitski@gmail.com"><span>Google Mail</span></a></h3>
+                    <h3 id="twitter" class="image-replacement twitter-dark"><a href="https://twitter.com/PaulKulitski"><span>Twitter Profile</span></a></h3>
+                </div>
             </div>
-        </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
-        <script type="text/javascript">
-            function wider() {
-                $('div#article').animate({"width": "90%"});
-            }
-            $(document).ready(function() {
-                $('#hide_btn').click(function() {
-                    $(".aside").hide('slow');
-                    setTimeout(wider, 600);
-                });
-                $('#facebook').mouseenter(function() {
-                    $(this).addClass("facebook-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("facebook-active").addClass("facebook-dark");
-                });
-                $('#twitter').mouseenter(function() {
-                    $(this).addClass("twitter-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("twitter-active").addClass("twitter-dark");
-                });
-                $('#google').mouseenter(function() {
-                    $(this).addClass("google-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("google-active").addClass("google-dark");
-                });
-
-            });</script>
-
-        <!-- Google Analitycs -->
-        <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-            (function(d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g, s)
-            }(document, 'script'));
-        </script> <!-- # Google Analytics -->
-    </body>
-</html>
+    
+            <script src="js/jquery.validate.js"></script>        
+            localize validation messages
+            <script src="js/localization/messages.js"></script>
+            <script src="js/main.js"></script>
+            <script type="text/javascript" src="js/main-validation.js"></script>
+            <script src="js/localization/jquery.ui.datepicker-ru.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript">
+            </script>
+    
+        </body>
+</html>    
