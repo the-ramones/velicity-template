@@ -46,7 +46,6 @@ input[type="checkbox"] {
     width:50%; 
     display:block-inline;
     border-top: 30px solid rgba(224, 133, 36, 1);        
-    position: relative;
 }
 
 .form-container h2 {

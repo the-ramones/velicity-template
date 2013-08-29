@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="Spring-based application's front-end">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/libs/jquery-1.10.2.js"></script>
+        <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
+
+        <style type="text/css">
+            input[type="text"] {
+                background-color: rgb(234, 134, 34);
+                background-image: none;
+                border-bottom-color: rgb(204, 204, 204);
+                border-bottom-left-radius: 25.5px;
+                border-bottom-right-radius: 25.5px;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-image-slice: 100% 100% 100% 100%;
+                border-image-source: none;
+                border-image-width: 1 1 1 1;
+                border-color: rgb(204, 204, 204);
+                border-style: solid;
+                border-width: 1px;
+                border-top-left-radius: 25.5px;
+                border-top-right-radius: 25.5px;
+                border-top-style: solid;
+                border-top-width: 1px;
+                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
+                color: rgb(255, 255, 255);
+                font-family: sans-serif;
+                font-size: 22px;
+                font-size-adjust: none;
+                font-stretch: normal;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                line-height: 27px;
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                padding-bottom: 11px;
+                padding-left: 40px;
+                padding-right: 0px;
+                padding-top: 11px;
+                text-align: start;
+                transition-delay: 0s, 0s;
+                transition-duration: 0.2s, 0.2s;
+                transition-property: border, box-shadow;
+                transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+                vertical-align: baseline;
+                width: 720px;
+                -moz-border-bottom-colors: none;
+                -moz-border-left-colors: none;
+                -moz-border-right-colors: none;
+                -moz-border-top-colors: none;
+                -moz-box-sizing: border-box;
+                -moz-font-feature-settings: normal;
+                -moz-font-language-override: normal;
+            }
+
+            input[type="text"]:focus {
+                box-shadow: 0 0 6px rgb(244,164,54);
+            }           
+            button {
+                background-color: rgb(234,134,34);
+                border-radius: 25.5px;
+                padding-bottom: 11px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 11px;
+                border: 1px solid rgb(204, 204, 204); 
+                transition-delay: 0s, 0s;
+                transition-duration: 0.2s, 0.2s;
+                transition-property: border, box-shadow;
+                transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
+                vertical-align: baseline;
+                width:120px;
+                box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
+                margin-left: 10px;
+                height: 51px;
+            }
+
+            button:hover {
+                box-shadow: 0 0 6px rgb(244,164,54);
+            }
+
+            .input-append,
+            .input-prepend {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 0;
+                white-space: nowrap;
+                vertical-align: middle;                
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--            [if lt IE 7]>
+                        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+                    <![endif]-->
+        <div class="page-wrap">
+            <div class="header-container">
+                <div class="wrapper clearfix">
+                    <a href="#home"><div id="logo"></div></a>
+                    <h1 class="title">Track your activities</h1>   
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Reports!</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a>
+                                        <ul>
+                                            <li><a href="#">Add activity</a></li>
+                                            <li><a href="#">Build report</a></li>
+                                            <li><a href="#">Ajax search</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Ajax search</a></li>                                
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a>
+                                <ul>
+                                    <li><a href="#">Add activity</a></li>
+                                    <li><a href="#">Build report</a></li>
+                                    <li><a href="#">Ajax search</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>        
+            </div>
+            content 
+            <div class="main-container">
+                <div class="main wrapper clearfix">
+
+                    <div id="search-wrap">
+                        <h2>Search using AJAX</h2>
+                        <form name="search-form" method="POST" action="search" autocomplete="off">
+                            <input type="text" name="search" value="" placeholder="Search" />
+                        </form>
+                        <ul class="subnav">
+                            <li><a href="#">Nothing has been found (:</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="aside">
+                        <h3>Add a new activity!</h3>
+                        <p>Fill in the form and push the 'Add' button. The entered data will be validated and, if everything is OK, stored to the Reports! database </p>
+                        <button id="hide_btn" class="btn-small" type="button">Hide it!</button>
+                    </div>
+
+                    <div class="sticky">
+                        <a href="#">Get a hint!</a>
+                    </div>
+
+                </div> <!-- #main --> 
+            </div> <!--#main-container--> 
+        </div> <!--#page-wrap--> 
+
+        <div class="footer-container">
+            <div class="wrapper clearfix">
+                <a href="#home"><div id="logo_small"></div></a>
+                <a href="#contact"><h3 style="float:left; text-decoration: none; color: #dddddd;"> Paul Kulitski 2013</h3></a>
+                <h3 id="facebook" class="image-replacement facebook-dark"><a href="https://www.facebook.com/pavel.kulicki"><span>Facebook Profile</span></a></h3>
+                <h3 id="google" class="image-replacement google-dark"><a href="mailto:p.kulitski@gmail.com"><span>Google Mail</span></a></h3>
+                <h3 id="twitter" class="image-replacement twitter-dark"><a href="https://twitter.com/PaulKulitski"><span>Twitter Profile</span></a></h3>
+            </div>
+        </div>
+
+        <script src="js/jquery.validate.js"></script>        
+        <!--localize validation messages-->
+        <script src="js/localization/messages.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/main-validation.js"></script>
+        <script src="js/localization/jquery.ui.datepicker-ru.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                /*
+                 * Actions on search box interactions
+                 */
+                $("input[name='search']").keydown(function(event) {
+                    var key = event.which;
+                    console.log(key);
+                    var lis = $(".subnav li");
+                    var search = $("input[name='search']");
+                    if (lis.size() > 0) {
+                        if ([34, 39, 40].indexOf(key) !== -1) {
+                            var selected = lis.filter(".selected");
+                            console.log("selected exists: " + selected.length);
+                            if (selected.length) {
+                                if (!selected.is(":last-child")) {
+                                    selected.removeClass("selected");
+                                    console.log(selected.next().html());
+                                    selected = selected.next();
+                                    selected.addClass("selected");
+                                    console.log(selected.find("a").text());
+                                }
+                            } else {
+                                selected = lis.first();
+                                selected.addClass("selected");
+                            }
+                            search.val(selected.find("a").text());
+                            console.log(event);
+                        }
+                        else if ([33, 37, 38].indexOf(key) !== -1) {
+                            var selected = lis.filter(".selected");
+                            console.log("selected exists: " + selected.length);
+                            if (selected.length) {
+                                if (!selected.is(":first-child")) {
+                                    selected.removeClass("selected");
+                                    console.log(selected.prev().html());
+                                    selected = selected.prev();
+                                    selected.addClass("selected");
+                                    console.log(selected.find("a").text());
+                                }
+                            } else {
+                                selected = lis.last();
+                                selected.addClass("selected");
+                            }
+                            search.val(selected.find("a").text());
+                            console.log(event);
+                        }
+                    }
+                });
+                $("input[name='search']").keypress(function(event) {
+                    if ($("li").size() === 1) {
+                        for (var i = 0; i < 3; i++) {
+                            $(".subnav li").clone().appendTo($(".subnav"));
+                        }
+                    }
+                    $(".subnav li").css({
+                        visibility: 'visible',
+                        top: '120%',
+                        opacity: "1",
+                        transition: "all"
+                    });
+                });
+            });
+        </script>
+
+    </body>
+</html>    
