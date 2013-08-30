@@ -583,9 +583,9 @@ form {
     display: block;
     float: right;
     font-size: 12px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px; 
-    border-radius: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
 }
 
 .center {

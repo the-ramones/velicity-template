@@ -200,46 +200,15 @@
             </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
-
+        <script src="js/jquery.validate.js"></script>        
+        <!--localize validation messages-->
+        <script src="js/localization/messages.js"></script>
         <script src="js/main.js"></script>
-
+        <script type="text/javascript" src="js/main-validation.js"></script>
+        <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
-            function wider() {
-                $('div#article').animate({"width": "90%"});
-            }
-            $(document).ready(function() {
-                $('#hide_btn').click(function() {
-                    $(".aside").hide('slow');
-                    setTimeout(wider, 600);
-                });
-                $('#facebook').mouseenter(function() {
-                    $(this).addClass("facebook-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("facebook-active").addClass("facebook-dark");
-                });
-                $('#twitter').mouseenter(function() {
-                    $(this).addClass("twitter-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("twitter-active").addClass("twitter-dark");
-                });
-                $('#google').mouseenter(function() {
-                    $(this).addClass("google-active");
-                }).mouseleave(function() {
-                    $(this).removeClass("google-active").addClass("google-dark");
-                });
+        </script>
 
-            });</script>
-
-        <!-- Google Analitycs -->
-        <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-            (function(d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g, s)
-            }(document, 'script'));
-        </script> <!-- # Google Analytics -->
     </body>
 </html>

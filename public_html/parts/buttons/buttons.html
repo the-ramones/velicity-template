@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Reports Action Buttons</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            button.action {
+                background: rgb(224, 133, 36);
+                position: relative;
+                border: 0 none;
+                border-radius: 6px;                
+                width: 15%;
+                float: left;
+                padding: 0;
+                text-align: center;
+                height: 36px;
+                width: 144px;
+                cursor: pointer;
+                margin: 20px;
+            }
+
+            .action.delete {
+                background: #b94a48;
+            }
+
+            .action.add {
+                background: #1f7f5c;
+            }
+
+            .action.update {
+                background: #0088cc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <button class="action">action</button>
+            <button class="action add">add</button>    
+            <button class="action update">update</button>          
+            <button class="action delete">delete</button>
+        </div>
+    </body>
+</html>

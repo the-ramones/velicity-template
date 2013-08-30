@@ -11,7 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css">        
+        <link rel="stylesheet" href="css/search_f.css">
         <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -19,210 +20,6 @@
         <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
 
         <style type="text/css">
-
-
-            #search-wrap h2 {
-                font: 1.4em Helvetica , sans-serif, sans;
-                color: rgb(204, 103, 26);
-                text-align: center; 
-                margin: 10px;  
-            }
-
-            #search-wrap {
-                position: relative;
-                width: 57%;
-                min-height: 168px;
-                margin: 0 auto;
-                float: left;
-                font: 22px Helvetica, sans-serif, sans;
-                border: dotted 1px;
-                padding: 0;
-                overflow: visible;
-                /*margin-right: 20px;*/
-            }
-
-            .results-wrap {
-                position: relative;
-                clear: both;
-                border: 1px dotted;
-                padding-top: 20px;
-            }
-
-            input[type="text"] {
-                background-attachment: scroll;
-                background-clip: border-box;
-                background-color: rgba(34,34,34, 0.8);
-                background-image: none;
-                background-origin: padding-box;
-                background-position: 0% 0%;
-                background-repeat: repeat;
-                background-size: auto auto;
-
-                border-image-outset: 0 0 0 0;
-                border-image-repeat: stretch stretch;
-                border-image-slice: 100% 100% 100% 100%;
-                border-image-source: none;
-                border-image-width: 1 1 1 1;
-
-                border-color: rgb(102,102,102);
-                border-style: solid;
-                border-width: 1px;
-                border-radius: 8px;
-
-                box-shadow: rgba(100, 100, 100, 0.8) 0px 0px 8px 0px;
-                color: rgb(221, 221, 221);
-                font-family: 'Source Sans Pro', sans-serif, sans;
-                font-size: 22px;
-                line-height: 26px;
-                /* positioning */
-                position: relative;
-                width: 100%; /* 720px; */
-                height: 40px;                
-
-                padding-bottom: 6px;
-                padding-left: 40px;
-                padding-right: 0px;
-                padding-top: 6px;
-                text-align: start;
-
-                transition-delay: 0s, 0s;
-                transition-duration: 0.2s, 0.2s;
-                transition-property: border, box-shadow;
-                transition-timing-function: cubic-bezier(0, 0, 1, 1), cubic-bezier(0, 0, 1, 1);
-                vertical-align: baseline;
-
-                box-sizing: border-box;
-                cursor: auto;
-
-                display: inline-block;
-                letter-spacing: normal;
-
-                text-shadow: none;
-                text-transform: none;
-
-                word-spacing: 0px;
-                writing-mode: lr-tb;
-
-                -moz-border-bottom-colors: none;
-                -moz-border-left-colors: none;
-                -moz-border-right-colors: none;
-                -moz-border-top-colors: none;
-                -moz-box-sizing: border-box;
-                -moz-font-feature-settings: normal;
-                -moz-font-language-override: normal;
-                -webkit-appearance: none;
-                -webkit-background-clip: border-box;
-                -webkit-background-origin: padding-box;
-                -webkit-background-size: auto;
-                -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px 0px;
-                -webkit-rtl-ordering: logical;
-                -webkit-transition-delay: 0s, 0s;
-                -webkit-transition-duration: 0.2s, 0.2s;
-                -webkit-transition-property: border, box-shadow;
-                -webkit-transition-timing-function: linear, linear;
-                -webkit-user-select: text;
-                -webkit-writing-mode: horizontal-tb;
-
-                z-index: 2;
-            }
-
-            input[type="text"]:hover {
-                /*transition-duration: 0.5s;*/
-                box-shadow: 0 0 4px rgb(224, 133, 36);
-            }
-
-            input[type="text"]::-moz-selection {
-                background: #222;
-                text-shadow: none;
-            }
-
-            input[type="text"]::selection {
-                background: #222;
-                text-shadow: none;
-            }
-            .subnav {
-                background: rgb(102, 102, 102);
-                display: inline-block;
-                /* positioning */
-                position: absolute;
-                width: 100%;  /*720px;*/ 
-                height: 40px;
-                left: 0px;
-                top: 52px;
-                padding: 0 0;
-                transition: all 0.1s;
-                z-index: 10;
-                visibility: hidden;
-                /*opacity: 0;*/
-            }
-
-            .subnav li {    
-                background: rgba(34, 34, 34, 0.95);
-                border-left: 1px solid #ddd;
-                border-right: 1px solid #ddd;
-                border-top: 1px solid #ddd;
-                list-style-type: none;
-                width: 92.5%;
-                position: relative;
-                left: 50%;
-                /* bad bit */
-                right: 1px;
-                margin: 0 0 0 -46.5%;
-                float: none;
-                visibility: hidden;  
-                z-index: 3;
-            }
-
-            .subnav li:hover {
-                background: rgba(184, 83, 36, 0.95);
-            }
-
-            .subnav li.selected {
-                background: rgba(204, 103, 26, 0.95);    /*crimson;*/
-            }
-
-            .subnav li:first-child {
-                border-top: 0;
-            }
-
-            .subnav li a {
-                font-size: 22px;
-                color: white;
-                display: block;
-                line-height: 40px;
-                padding: 0 26px;
-                text-decoration: none;
-                font-family: 'Source Sans Pro', sans-serif, sans;   
-            }
-
-            .subnav:hover li {
-                visibility: visible;
-                top: 100%;
-            }
-
-            #search_button {
-                position: absolute;
-                z-index: 5;
-                top: 68px;
-                left: 81.1%;
-                border: 0 none;
-                border-radius: 6px;
-                background: rgb(224, 133, 36) url("http://designmodo.com/demo/dropdown-menu-search/search.png") center no-repeat;
-                width: 15%;
-                float: left;
-                padding: 0;
-                text-align: center;
-                height: 36px;
-                cursor: pointer;
-            }
-
-            #search_button:hover {
-                background: rgba(184, 83, 36, 0.95) url("http://designmodo.com/demo/dropdown-menu-search/search.png") center no-repeat;
-            }
-
-            .stats {
-                font-size: 16px;
-            }            
         </style>
     </head>
     <body>
@@ -287,338 +84,108 @@
                     </div>
 
                     <div class="results-wrap">
+                        ## activities list template
+                        <h2>List of activities</h2>
+                        <table class="table">
+                            <caption>Reports! records</caption>
+                            <thead>
+                                <tr>
+                                    <td>id</td>
+                                    <td>start date</td>
+                                    <td>end date</td>
+                                    <td>performer</td>
+                                    <td>activity</td>
+                                </tr>
+                            <tbody>
+                                #foreach($report in $reports)
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>   <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
+                                <tr>
+                                    <td>${report.id}</td>
+                                    <td>${report.startDate}</td>
+                                    <td>${report.endDate}</td>
+                                    <td>${report.performer}</td>
+                                    <td>${report.activity}</td>
+                                </tr>
 
-
-                        jQuery
-                        jQuery UI
-                        jQuery Mobile
-                        Sizzle
-                        QUnit
-
-                        Plugins
-                        Contribute
-                        Events
-                        Support
-                        jQuery Foundation
-
-                        jQuery Plugin Registry
-                        jQuery Austin Conference
-
-                        Naming Your Plugin
-                        Publishing Your Plugin
-                        Package Manifest
-
-                        Search jQuery Plugin Registry
-                        The jQuery Plugin Registry
-                        Search jQuery Plugin Registry
-                        Popular Tags
-
-                        ui (342)
-                        jquery (172)
-                        animation (171)
-                        form (163)
-                        input (150)
-                        image (131)
-                        slider (109)
-                        slideshow (102)
-                        effect (98)
-                        gallery (88)
-
-                        New Plugins
-                        Version 0.1.0
-                        Released 4 hours ago
-                        jQuery udraggable
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for making elements draggable with both mouse and touch support. A (tiny) subset of the functionality of jQueryUI’s ‘draggable’ widget, but with touch support added.
-                        Version 3.0.3
-                        Released 6 hours ago
-                        Multiple files simultaneous download
-                        19
-                        Watchers
-                        8
-                        Forks
-
-                        jQuery plugin multiple files simultaneous download.
-                        Version 0.2.0
-                        Released 11 hours ago
-                        HTML5 Finder
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery HTML5 Drilldown Finder Plugin
-                        Version 0.1.1
-                        Released 16 hours ago
-                        jQuery safe xdr
-                        0
-                        Watchers
-                        1
-                        Forks
-
-                        jQuery plugin to make Cross Domain Requests with JavaScript without jsonp. To receive some response for this calls, you have to add the Access-Control-Allow-Origin HTTP header.
-                        Version 1.1.0
-                        Released 16 hours ago
-                        jQuery Div Treemap
-                        17
-                        Watchers
-                        18
-                        Forks
-
-                        A simple jQuery plugin to create a tree map view of json data based on div for easy customization.
-                        Version 1.0.1
-                        Released 16 hours ago
-                        jQuery MyPlaces
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery MyPlaces uses Google Maps API (v.3) to locate and display a set of determined places on the map.
-                        Version 0.0.2
-                        Released 19 hours ago
-                        jsSimpleSlide
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for a very basic horizontal content slider
-                        Version 0.0.1
-                        Released 19 hours ago
-                        jsSimpleSlider
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for a very basic horizontal content slider
-                        Version 1.0.6
-                        Released 20 hours ago
-                        Jquery.Delete
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        This plugin will be deleted and will be published again, repository is not working anymore
-                        Version 1.4.0
-                        Released 22 hours ago
-                        jQuery Behavior Plugin
-                        6
-                        Watchers
-                        1
-                        Forks
-
-                        Unobstrusive scripting simply and easily. Declarative events with Metabehaviors based on Live Query.
-                        Recent Updates
-
-                        MediaSlide
-                        (version 1.4.14)
-                        jQuery udraggable
-                        (version 0.1.0)
-                        Visual jQuery Lightbox - Beautiful jQuery Lightbox
-                        (version 5.7.2)
-                        Video jQuery Lightbox - Fancy Video LightBox!
-                        (version 2.5.3)
-                        Multiple files simultaneous download
-                        (version 3.0.3)
-
-                        GitHub Plugins
-                        Registry
-                        Forum Community
-                        Support
-                        Bugs Issue
-                        Tracker
-
-                        Presentations
-
-                        Building Single Page Applications With jQuery's Best Friends by Addy Osmani Building Single Page Applications With jQuery's Best Friends Addy Osmani
-                        jQuery Performance Tips & Tricks by Addy Osmani jQuery Performance
-                        Tips & Tricks Addy Osmani
-
-                        Books
-
-                        Learning jQuery 3rd Edition by Karl Swedberg and Jonathan Chaffer Learning jQuery Third Edition Karl Swedberg and Jonathan Chaffer
-                        jQuery in Action by Bear Bibeault and Yehuda Katz jQuery in Action Bear Bibeault and Yehuda Katz
-                        jQuery Succinctly by Cody Lindley jQuery Succinctly Cody Lindley
-
-                        Forum
-                        API
-                        Twitter
-                        IRC
-
-                        Copyright 2013 The jQuery Foundation. Web hosting by Media Temple | CDN by MaxCDN | Powered by WordPress | Thanks: Members, Sponsors
-                        Results!
-                        jQuery
-                        jQuery UI
-                        jQuery Mobile
-                        Sizzle
-                        QUnit
-
-                        Plugins
-                        Contribute
-                        Events
-                        Support
-                        jQuery Foundation
-
-                        jQuery Plugin Registry
-                        jQuery Austin Conference
-
-                        Naming Your Plugin
-                        Publishing Your Plugin
-                        Package Manifest
-
-                        Search jQuery Plugin Registry
-                        The jQuery Plugin Registry
-                        Search jQuery Plugin Registry
-                        Popular Tags
-
-                        ui (342)
-                        jquery (172)
-                        animation (171)
-                        form (163)
-                        input (150)
-                        image (131)
-                        slider (109)
-                        slideshow (102)
-                        effect (98)
-                        gallery (88)
-
-                        New Plugins
-                        Version 0.1.0
-                        Released 4 hours ago
-                        jQuery udraggable
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for making elements draggable with both mouse and touch support. A (tiny) subset of the functionality of jQueryUI’s ‘draggable’ widget, but with touch support added.
-                        Version 3.0.3
-                        Released 6 hours ago
-                        Multiple files simultaneous download
-                        19
-                        Watchers
-                        8
-                        Forks
-
-                        jQuery plugin multiple files simultaneous download.
-                        Version 0.2.0
-                        Released 11 hours ago
-                        HTML5 Finder
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery HTML5 Drilldown Finder Plugin
-                        Version 0.1.1
-                        Released 16 hours ago
-                        jQuery safe xdr
-                        0
-                        Watchers
-                        1
-                        Forks
-
-                        jQuery plugin to make Cross Domain Requests with JavaScript without jsonp. To receive some response for this calls, you have to add the Access-Control-Allow-Origin HTTP header.
-                        Version 1.1.0
-                        Released 16 hours ago
-                        jQuery Div Treemap
-                        17
-                        Watchers
-                        18
-                        Forks
-
-                        A simple jQuery plugin to create a tree map view of json data based on div for easy customization.
-                        Version 1.0.1
-                        Released 16 hours ago
-                        jQuery MyPlaces
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery MyPlaces uses Google Maps API (v.3) to locate and display a set of determined places on the map.
-                        Version 0.0.2
-                        Released 19 hours ago
-                        jsSimpleSlide
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for a very basic horizontal content slider
-                        Version 0.0.1
-                        Released 19 hours ago
-                        jsSimpleSlider
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        jQuery plugin for a very basic horizontal content slider
-                        Version 1.0.6
-                        Released 20 hours ago
-                        Jquery.Delete
-                        0
-                        Watchers
-                        0
-                        Forks
-
-                        This plugin will be deleted and will be published again, repository is not working anymore
-                        Version 1.4.0
-                        Released 22 hours ago
-                        jQuery Behavior Plugin
-                        6
-                        Watchers
-                        1
-                        Forks
-
-                        Unobstrusive scripting simply and easily. Declarative events with Metabehaviors based on Live Query.
-                        Recent Updates
-
-                        MediaSlide
-                        (version 1.4.14)
-                        jQuery udraggable
-                        (version 0.1.0)
-                        Visual jQuery Lightbox - Beautiful jQuery Lightbox
-                        (version 5.7.2)
-                        Video jQuery Lightbox - Fancy Video LightBox!
-                        (version 2.5.3)
-                        Multiple files simultaneous download
-                        (version 3.0.3)
-
-                        GitHub Plugins
-                        Registry
-                        Forum Community
-                        Support
-                        Bugs Issue
-                        Tracker
-
-                        Presentations
-
-                        Building Single Page Applications With jQuery's Best Friends by Addy Osmani Building Single Page Applications With jQuery's Best Friends Addy Osmani
-                        jQuery Performance Tips & Tricks by Addy Osmani jQuery Performance
-                        Tips & Tricks Addy Osmani
-
-                        Books
-
-                        Learning jQuery 3rd Edition by Karl Swedberg and Jonathan Chaffer Learning jQuery Third Edition Karl Swedberg and Jonathan Chaffer
-                        jQuery in Action by Bear Bibeault and Yehuda Katz jQuery in Action Bear Bibeault and Yehuda Katz
-                        jQuery Succinctly by Cody Lindley jQuery Succinctly Cody Lindley
-
-                        Forum
-                        API
-                        Twitter
-                        IRC
-
-                        Copyright 2013 The jQuery Foundation. Web hosting by Media Temple | CDN by MaxCDN | Powered by WordPress | Thanks: Members, Sponsors
-                        Results!
+                                #end
+                            </tbody>
+                            </thead>
+                        </table>
                     </div>
 
                 </div> <!-- #main --> 
@@ -642,80 +209,8 @@
         <script type="text/javascript" src="js/main-validation.js"></script>
         <script src="js/localization/jquery.ui.datepicker-ru.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                /*
-                 * Actions on search box interactions
-                 */
-                $(".subnav").on("click", "a", function() {
-                    console.log("enter onclick");
-                    $("input[name='search']").val($(this).text());
-                    $(".subnav li").css({
-                        visibility: 'hidden'});
-                    console.log("enter onclick");
-                });
-                console.log("go-go-og   ");
-                $("input[name='search']").keydown(function(event) {
-                    var key = event.which;
-                    console.log(key);
-                    var lis = $(".subnav li");
-                    var search = $("input[name='search']");
-                    if (lis.size() > 0) {
-                        if ([34, 39, 40].indexOf(key) !== -1) {
-                            var selected = lis.filter(".selected");
-                            console.log("selected exists: " + selected.length);
-                            if (selected.length) {
-                                if (!selected.is(":last-child")) {
-                                    selected.removeClass("selected");
-                                    console.log(selected.next().html());
-                                    selected = selected.next();
-                                    selected.addClass("selected");
-                                    console.log(selected.find("a").text());
-                                }
-                            } else {
-                                selected = lis.first();
-                                selected.addClass("selected");
-                            }
-                            search.val(selected.find("a").text());
-                            console.log(event);
-                        }
-                        else if ([33, 37, 38].indexOf(key) !== -1) {
-                            var selected = lis.filter(".selected");
-                            console.log("selected exists: " + selected.length);
-                            if (selected.length) {
-                                if (!selected.is(":first-child")) {
-                                    selected.removeClass("selected");
-                                    console.log(selected.prev().html());
-                                    selected = selected.prev();
-                                    selected.addClass("selected");
-                                    console.log(selected.find("a").text());
-                                }
-                            } else {
-                                selected = lis.last();
-                                selected.addClass("selected");
-                            }
-                            search.val(selected.find("a").text());
-                            console.log(event);
-                        }
-                    }
-                });
-                $("input[name='search']").keypress(function(event) {
-                    if ($(".subnav li").size() === 1) {
-                        for (var i = 0; i < 3; i++) {
-                            $(".subnav li").clone().appendTo($(".subnav"));
-                            console.log("added");
-                        }
-                        console.log("entered");
-                    }
-                    console.log("pass");
-                    $(".subnav li").css({
-                        visibility: 'visible',
-                        top: '120%',
-                        opacity: "1",
-                        transition: "all"
-                    });
-                });
-            });
+        <script type="text/javascript" src="js/search_f.js"></script>
+        <script type="text/javascript">       
         </script>
 
     </body>
