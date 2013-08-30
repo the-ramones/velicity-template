@@ -1,4 +1,9 @@
-
+.results-wrap h2 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(204, 103, 26);
+}
 
 #search-wrap h2 {
     font: 1.4em Helvetica , sans-serif, sans;
@@ -193,9 +198,11 @@ input[type="text"]::selection {
     text-align: center;
     height: 36px;
     cursor: pointer;
+    transition: all;
+    transition-duration: 0.3s;
 }
 
-#search_button:hover {
+#search_button:active {
     background: rgba(184, 83, 36, 0.95) url("http://designmodo.com/demo/dropdown-menu-search/search.png") center no-repeat;
 }
 

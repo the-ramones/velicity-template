@@ -11,10 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css">        
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
+        <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -63,11 +66,11 @@
                             <caption>Reports! records</caption>
                             <thead>
                                 <tr>
-                                    <td>id</td>
-                                    <td>start date</td>
-                                    <td>end date</td>
-                                    <td>performer</td>
-                                    <td>activity</td>
+                                    <th>id</th>
+                                    <th>start date</th>
+                                    <th>end date</th>
+                                    <th>performer</th>
+                                    <th>activity</th>
                                 </tr>
                             <tbody>
                                 #foreach($report in $reports)
@@ -168,7 +171,9 @@
                                     <td>${report.endDate}</td>
                                     <td>${report.performer}</td>
                                     <td>${report.activity}</td>
-                                </tr>                            <tr>
+                                    <!--button group-->
+                                </tr>     
+                                <tr>
                                     <td>${report.id}</td>
                                     <td>${report.startDate}</td>
                                     <td>${report.endDate}</td>
@@ -180,8 +185,14 @@
                                     <td>${report.endDate}</td>
                                     <td>${report.performer}</td>
                                     <td>${report.activity}</td>
-                                </tr>
-                                #end
+                            <div class="button-block clearfix hidden">
+                                <button class="action">action</button>
+                                <button class="action add">add</button>    
+                                <button class="action update">update</button>          
+                                <button class="action delete">delete</button>
+                            </div>
+                            </tr>
+                            #end
                             </tbody>
                             </thead>
                         </table>
@@ -206,6 +217,7 @@
         <script src="js/main.js"></script>
         <script type="text/javascript" src="js/main-validation.js"></script>
         <!--<script src="js/localization/jquery.ui.datepicker-ru.js"></script>-->
+        <script src="js/search_f.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
         </script>

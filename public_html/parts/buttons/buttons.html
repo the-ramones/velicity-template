@@ -13,31 +13,71 @@
                 float: left;
                 padding: 0;
                 text-align: center;
-                height: 36px;
-                width: 144px;
+                height: 28px;
+                width: 72px;
                 cursor: pointer;
-                margin: 20px;
+                margin: 5px 5px 5px 5px; 
+                color: rgb(221,221,221);
+                font-size: 1.0em;
+            }
+
+            button.action:active {
+                background: rgb(194, 83, 36);
             }
 
             .action.delete {
-                background: #b94a48;
+                background: #ca4a48;
             }
 
             .action.add {
-                background: #1f7f5c;
+                background: #1fa75c;
             }
 
             .action.update {
-                background: #0088cc;
+                background: #008899;
+            }
+
+            .action.delete:active {
+                background: #b94a48;                
+            }
+
+            .action.add:active {
+                background: #1f7f5c;
+            }
+
+            .action.update:active {
+                background: #006699;
+            }
+
+            .button-block {
+                /*border: 1px solid black;*/   
+                border-radius: 8px;
+                background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+                background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+                padding: 0;
+                margin: 0;
+            }
+
+            .clearfix {
+                content: "";
+                display: table;
+                clear: both;                    
             }
         </style>
     </head>
     <body>
         <div id="container">
             <button class="action">action</button>
-            <button class="action add">add</button>    
             <button class="action update">update</button>          
+            <button class="action add">add</button>    
             <button class="action delete">delete</button>
+
+            <div class="button-block clearfix">
+                <button class="action">action</button>
+                <button class="action add">add</button>    
+                <button class="action update">update</button>          
+                <button class="action delete">delete</button>
+            </div>
         </div>
     </body>
 </html>

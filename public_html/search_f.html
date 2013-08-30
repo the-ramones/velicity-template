@@ -80,24 +80,29 @@
                     </div>
 
                     <div class="sticky">
-                        <a href="#">Get a hint!</a>
+                        <a href="#"><i class="icon-briefcase"></i>Get a hint!</a>
                     </div>
 
+                    <div class="login">
+                        <a href="#"><i class="icon-briefcase"></i>Get a hint!</a>
+                    </div>                    
+                    
                     <div class="results-wrap">
                         ## activities list template
                         <h2>List of activities</h2>
-                        <table class="table">
+                        <table tabindex="1" class="table">
                             <caption>Reports! records</caption>
                             <thead>
                                 <tr>
-                                    <td>id</td>
-                                    <td>start date</td>
-                                    <td>end date</td>
-                                    <td>performer</td>
-                                    <td>activity</td>
+                                    <th>id</th>
+                                    <th>start date</th>
+                                    <th>end date</th>
+                                    <th>performer</th>
+                                    <th>activity</th>
                                 </tr>
                             <tbody>
                                 #foreach($report in $reports)
+                                
                                 <tr>
                                     <td>${report.id}</td>
                                     <td>${report.startDate}</td>
@@ -173,6 +178,13 @@
                                     <td>${report.endDate}</td>
                                     <td>${report.performer}</td>
                                     <td>${report.activity}</td>
+                                    <!--button group-->
+                                     <div class="button-block clearfix hidden">
+                                            <button class="action">action</button>
+                                            <button class="action add">add</button>    
+                                            <button class="action update">update</button>          
+                                            <button class="action delete">delete</button>
+                                     </div>
                                 </tr>
                                 <tr>
                                     <td>${report.id}</td>
@@ -192,6 +204,8 @@
             </div> <!--#main-container--> 
         </div> <!--#page-wrap--> 
 
+
+
         <div class="footer-container">
             <div class="wrapper clearfix">
                 <a href="#home"><div id="logo_small"></div></a>
@@ -210,7 +224,7 @@
         <script src="js/localization/jquery.ui.datepicker-ru.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/search_f.js"></script>
-        <script type="text/javascript">       
+        <script type="text/javascript">
         </script>
 
     </body>
