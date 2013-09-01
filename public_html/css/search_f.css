@@ -22,13 +22,12 @@
     border: dotted 1px;
     padding: 0;
     overflow: visible;
-    /*margin-right: 20px;*/
 }
 
 .results-wrap {
     position: relative;
     clear: both;
-    border: 1px dotted;
+    /*border: 1px dotted;*/
     padding-top: 20px;
 }
 
@@ -107,7 +106,7 @@ input[type="text"] {
     -webkit-user-select: text;
     -webkit-writing-mode: horizontal-tb;
 
-    z-index: 2;
+    /*z-index: 2;*/
 }
 
 input[type="text"]:hover {

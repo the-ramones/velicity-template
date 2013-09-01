@@ -1,0 +1,51 @@
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50)
+}
+
+#modal {
+    position: absolute;
+    background: url(tint.png) 0 0 repeat;
+    background: rgba(224, 133, 36, 0.9);
+    border-radius: 8px;
+    border-top: 14px solid rgba(224, 133, 36, 0.9); 
+    padding: 4px;
+/*    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -100px;    */
+}
+
+#content {
+    border-radius: 4px;
+    background:  #fff;
+    padding: 20px;
+}
+
+#close {
+    position: absolute;
+    background: url(glyph.png) -168px -96px no-repeat;
+    width: 14px;
+    height: 14px;
+    display: block;
+    text-indent: -9999px;
+    top: -12px;
+    right: 6px;
+    outline: none;
+}
+
+div.center {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -30px;    
+}
+
+

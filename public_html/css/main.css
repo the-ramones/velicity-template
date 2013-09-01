@@ -1,3 +1,133 @@
+.button-block-modal {
+    width: fit-content;
+    float: right;
+}
+
+.modal-span {
+    font-style: italic;
+    position: relative;
+    top: 8px;
+}
+
+/* Entypo-based side sticky menu*/
+
+/***** Font and Icon load ******/
+
+@font-face {
+    font-family: 'Entypo';
+    src: url('../font/entypo.eot'); /*IE9 */
+    src: local('☺'), 
+        url('../font/entypo.woff') format('woff'),  /* *Modern browsers */
+        url('../font/entypo.ttf') format('truetype'), /* Safari, Android */
+        url('../font/entypo.svg') format('svg'); /* Legacy iOS */
+}
+
+[data-icon]:before {
+    font-family: 'Entypo';
+    content: attr(data-icon);
+}
+
+div.login-wrap{
+    position: fixed;
+    display: block;   
+    left: -1px;
+    top: 20%;
+}
+
+div.login-stick {
+    position: relative;
+    top: 30%;
+    padding: .1em;
+    background: rgb(224, 133, 36);
+    float: left;
+    -webkit-border-radius: 0 .4em .4em 0;
+    -moz-border-radius: 0 .4em .4em 0;
+    border-radius: 0 .4em .4em 0;
+}
+
+div.login-wrap ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div.login-stick ul li a{
+    display: block;
+    width: 1em;
+    margin: 0.2em;
+    line-height: 100%;
+    font-size: 2.2em;
+    text-align: center;
+    color: #fff;
+    background-color: #ca4a48;
+    -webkit-border-radius: .1em;
+    -moz-border-radius: .1em;
+    border-radius: .1em;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+}
+
+div.login-stick ul li a:hover{
+    background-color: #b94a48;
+}
+
+div.login-stick ul li a:active {
+    background-color: #b94a48;
+}
+
+div.popup {
+    display: none;
+    float: right;
+    position: relative;    
+    left: 5%;
+    top: 5px;
+    height: 100%;
+    background-color: #ca4a48;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    border-radius: .2em;
+    z-index: 30;
+    opacity: 1;
+}
+
+div#popup-language {
+    top: 50px;
+}
+
+div.popup ul li a{
+    position: relative;
+    display: block;
+    font-size: .85em;
+    color: #fff;
+    padding: 0.5em 2em 0.5em 2em;
+    margin: .4em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    border-radius: .2em;    
+    /*margin: 0.4em auto;*/
+}
+
+div.popup ul li a:hover{
+    background-color: #b94a48;
+}
+
+.arrow {
+    position: absolute;
+    top: 10%;
+    left: -0.4em;
+    width: 0px; height: 0px;
+    border-top: .5em solid transparent;
+    border-right: .5em solid #ca4a48;
+    border-bottom: .5em solid transparent;
+}
+
+
 /* Login and Localization side sticky menu */
 .login {
     visibility: hidden;
@@ -5,23 +135,23 @@
     height: 5.5%;    
     position: fixed;
     top: 35%;
-    left: 92%; /*92%;    */
+    left: -6.7%; /*92%;    */
     background: rgb(224, 133, 36);
     /*border: 1px solid #222;*/
     border-radius: 8px 8px 0 0;
     box-shadow: 0 0 3px #222;
-    /*    box-direction: reverse;            As specified 
+    /*   box-direction: reverse;            As specified 
         -moz-box-direction: reverse;       Mozilla 
         -webkit-box-direction: reverse;    WebKit */
     text-orientation:rotate-left;
     /* Safari */
-    -webkit-transform: rotate(-90deg);
+    -webkit-transform: rotate(90deg);
     /* Firefox */
-    -moz-transform: rotate(-90deg) ;
+    -moz-transform: rotate(90deg) ;
     /* IE */
-    -ms-transform: rotate(-90deg);
+    -ms-transform: rotate(90deg);
     /* Opera */
-    -o-transform: rotate(-90deg);
+    -o-transform: rotate(90deg);
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
@@ -76,6 +206,9 @@ button.action {
     font-size: 1.0em;
     transition: all;
     transition-duration: 0.2s;
+    padding: 5px 10px 5px 10px;
+    width: auto;
+    height: auto;
 }
 
 button.action:active {
@@ -88,6 +221,9 @@ button.action:active {
 
 .action.add {
     background: #1fa75c;
+    position:relative;
+    left: 50%;
+    margin-left: -44px;    
 }
 
 .action.update {
@@ -99,7 +235,7 @@ button.action:active {
 }
 
 .action.add:active {
-    background: #1f7f5c;
+    background: rgb(31, 127, 92); 
 }
 
 .action.update:active {
@@ -110,8 +246,10 @@ button.action:active {
     /*border: 1px solid black;*/   
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
-    background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+    background: rgba(184, 83, 36, 0.95);
+    background: -webkit-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE);
+    background: -moz-linear-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE 175px);
+    background: -o-linear-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE 175px);
     padding: 0;
     margin: 0;
     display: inline-block;
@@ -531,6 +669,8 @@ body {
 .header-container {
     background: url(../img/grunge.jpg) repeat-x;
     border-bottom: 10px solid rgba(224, 133, 36, 0.7);
+    z-index: 5;
+    position: relative;
 }
 
 .footer-container,
@@ -755,15 +895,16 @@ form {
 
 .sticky {
     visibility: hidden;
-    width: 15%;
+    z-index: 3;
+    width: 10%;
     height: 5.5%;    
     position: fixed;
-    top: 25%;
-    left: 92%; /*92%;    */
+    top: 26%;
+    left: 94.5%; /*92%;    */
     background: rgb(224, 133, 36);
     /*border: 1px solid #222;*/
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 0 3px #222;
+    border-radius: 6px 6px 0 0;
+    /*box-shadow: 0 0 3px #222;*/
     /*    box-direction: reverse;            As specified 
         -moz-box-direction: reverse;       Mozilla 
         -webkit-box-direction: reverse;    WebKit */
@@ -785,6 +926,7 @@ form {
         -moz-box-direction: reverse;       Mozilla 
         -webkit-box-direction: reverse;    WebKit */
     text-align: center;
+    vertical-align: bottom;
     width: 100%;
     height: 100%;
     display: block;
@@ -1060,7 +1202,7 @@ form {
 
 /*    ======================================================================    */
 .icon-glass {
-    background-position: 0      0;
+    background-position: 0 0;
 }
 
 .icon-music {

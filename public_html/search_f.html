@@ -19,8 +19,27 @@
         <script src="js/libs/jquery-1.10.2.js"></script>
         <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
 
-        <style type="text/css">
-        </style>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#language").click(function() {
+                    $("#popup-login").hide(50);
+                    setTimeout(function() {
+                        $("#popup-language").fadeToggle(150);
+                    }, 50);
+                    return false;
+                });
+                $("#login").click(function() {
+                    $("#popup-language").hide(50);
+                    setTimeout(function() {
+                    $("#popup-login").fadeToggle(150); 
+                    },50);
+                    return false;
+                });
+                $("#popup-login,#popup-language").mouseleave(function(event) {
+                    $(this).fadeOut(150);
+                });
+            });
+        </script>
     </head>
     <body>
         <!-- [if lt IE 7]>
@@ -84,9 +103,39 @@
                     </div>
 
                     <div class="login">
-                        <a href="#"><i class="icon-briefcase"></i>Get a hint!</a>
+                        <a href="#"><i class="icon-certificate"></i>Login/Lang</a>
+                    </div> 
+
+                    <div class="login-wrap">
+                        <div class="login-stick">
+                            <ul>
+                                <li id="login">
+                                    <a href="#" data-icon="&#128101;"></a>
+                                </li>
+                                <li id="language">
+                                    <a href="#" data-icon="&#127758;"></a>
+                                </li>
+                                <li id="checklist">
+                                    <a href="#" data-icon="&#59197;"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="popup" id="popup-login">
+                            <div class="arrow"></div>
+                            <ul>
+                                <li><a href="#">Anonymous User</a></li>
+                                <li><a href="#">Login/Logout</a></li>
+                            </ul>
+                        </div>                        
+                        <div class="popup" id="popup-language">
+                            <div class="arrow"></div>
+                            <ul>
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Russian</a></li>
+                            </ul>
+                        </div>
                     </div>                    
-                    
+
                     <div class="results-wrap">
                         ## activities list template
                         <h2>List of activities</h2>
@@ -102,7 +151,7 @@
                                 </tr>
                             <tbody>
                                 #foreach($report in $reports)
-                                
+
                                 <tr>
                                     <td>${report.id}</td>
                                     <td>${report.startDate}</td>
@@ -179,27 +228,25 @@
                                     <td>${report.performer}</td>
                                     <td>${report.activity}</td>
                                     <!--button group-->
-                                     <div class="button-block clearfix hidden">
-                                            <button class="action">action</button>
-                                            <button class="action add">add</button>    
-                                            <button class="action update">update</button>          
-                                            <button class="action delete">delete</button>
-                                     </div>
-                                </tr>
-                                <tr>
-                                    <td>${report.id}</td>
-                                    <td>${report.startDate}</td>
-                                    <td>${report.endDate}</td>
-                                    <td>${report.performer}</td>
-                                    <td>${report.activity}</td>
-                                </tr>
+                            <div class="button-block clearfix hidden">
+                                <button class="action">action</button>
+                                <button class="action update">update</button>          
+                                <button class="action delete">delete</button>
+                            </div>
+                            </tr>
+                            <tr>
+                                <td>${report.id}</td>
+                                <td>${report.startDate}</td>
+                                <td>${report.endDate}</td>
+                                <td>${report.performer}</td>
+                                <td>${report.activity}</td>
+                            </tr>
 
-                                #end
+                            #end
                             </tbody>
                             </thead>
                         </table>
                     </div>
-
                 </div> <!-- #main --> 
             </div> <!--#main-container--> 
         </div> <!--#page-wrap--> 

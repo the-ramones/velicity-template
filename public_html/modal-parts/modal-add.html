@@ -1,0 +1,27 @@
+<h2>Reports! add form</h2>
+<!-- reports form -->
+
+<form name="report-add" action="/report/add" method="POST">
+    <div class="form-line clearfix">
+        <label>Start date:</label>
+        <input id="startDate" name="startDate" value="" type="text" placeholder="Input a start date" autocomplete="off">                            
+    </div>
+    <div class="form-line clearfix">
+        <label>End date:</label>
+        <input id="endDate" name="endDate" value="" type="text" placeholder="Input an end date" autocomplete="off">             
+    </div>
+    <div class="form-line clearfix">
+        <label>Performer:</label>
+        <input id="performer" name="performer" value="" type="text" placeholder="Input a performer">
+    </div>
+    <div class="form-line clearfix">
+        <label>Activity:</label>
+        <input id="activity" name="activity" value="" type="text" placeholder="Input an activity">     
+    </div>
+    <div class='clearfix'>
+        <div class='button-block-modal'>
+            <button class="action" name="report-submit" type="submit">Add</button>
+            <button class="action delete">Close</button>
+        </div>
+    </div>
+</form>         

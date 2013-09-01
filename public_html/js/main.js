@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
     $(".sticky a").click(function() {
         $(".sticky").animate({left: "+=2%"}, 1000, function() {
-            $(this).css({visibility: "hidden", left: "92%"});
+            $(this).css({visibility: "hidden", left: "94.5%"});
             $('div#article').animate({"width": "57%"}, 600);
             setTimeout(fadeIn, 1000);
         });

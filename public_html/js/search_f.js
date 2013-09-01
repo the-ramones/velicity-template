@@ -3,13 +3,10 @@ $(document).ready(function() {
      * Actions on search box interactions
      */
     $(".subnav").on("click", "a", function() {
-        console.log("enter onclick");
         $("input[name='search']").val($(this).text());
         $(".subnav li").css({
             visibility: 'hidden'});
-        console.log("enter onclick");
     });
-    console.log("go-go-og   ");
     $("input[name='search']").keydown(function(event) {
         var key = event.which;
         console.log(key);
@@ -60,7 +57,7 @@ $(document).ready(function() {
         });
     });
     /*
-     * On-click modal apearing
+     * On-click modal apзearing
      */
     $(".table tbody tr").click(function(event) {
         if (!$(event.target).is(".button-block, .action")) {
@@ -69,10 +66,7 @@ $(document).ready(function() {
         }
         // TODO: add modal dialog
     });
-    /*
-     * Button-group addition
-     */
-    $(".table tbody tr").mouseenter(function(event) {
+    $(".table tbody tr").dblclick(function(event) {
         var buttons = $(".button-block");
         var tr = $(this);
         buttons.css({
@@ -81,6 +75,12 @@ $(document).ready(function() {
         });
         $(this).append(buttons);
         buttons.removeClass("hidden");
+    });
+    /*
+     * Button-group addition
+     */
+    $(".table tbody tr").mouseenter(function(event) {
+        // TODO 
     });
     $(".table tbody tr").mouseleave(function(avent) {
         var buttons = $(".button-block");
