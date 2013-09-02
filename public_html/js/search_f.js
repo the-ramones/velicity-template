@@ -1,7 +1,7 @@
+/*
+ * Actions on search box interactions
+ */
 $(document).ready(function() {
-    /*
-     * Actions on search box interactions
-     */
     $(".subnav").on("click", "a", function() {
         $("input[name='search']").val($(this).text());
         $(".subnav li").css({
