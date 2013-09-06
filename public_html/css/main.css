@@ -247,9 +247,6 @@ button.action:active {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background: rgba(184, 83, 36, 0.95);
-    background: -webkit-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE);
-    background: -moz-linear-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE 175px);
-    background: -o-linear-gradient(bottom, rgba(184, 83, 36, 0.95), #EEEEEE 175px);
     padding: 0;
     margin: 0;
     display: inline-block;

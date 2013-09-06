@@ -27,7 +27,7 @@
                 <div class="wrapper clearfix">
                     <a href="#home"><div id="logo"></div></a>
                     <h1 class="title">Track your activities</h1>   
-                    <nav>
+                    <div id="nav">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Reports!</a>
@@ -51,7 +51,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>        
             </div>
             <!-- content -->
@@ -62,7 +62,7 @@
                         <h2>Reports! add form</h2>
                         <!-- reports form -->
 
-                        <form name="report-add" action="/report/add" method="POST">
+                        <form name="report-add" action="/report/add" method="GET" onsubmit="encodeParam()">
                             <div class="form-line clearfix">
                                 <label>Start date:</label>
                                 <input id="startDate" name="startDate" value="" type="text" placeholder="Input a start date" autocomplete="off">                            
@@ -92,6 +92,13 @@
                     <div class="sticky">
                         <a href="#">Get a hint!</a>
                     </div>
+                    
+                    <script type="text/javascript">
+                        function encodeParam() {
+                            $("#performer").val(encodeURICompoment($("#performer").val()));
+                            $("form[name='report-add'").submit();
+                        }
+                    </script>
 
                 </div> <!-- #main -->
             </div> <!-- #main-container -->

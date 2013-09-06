@@ -61,7 +61,7 @@ $.validator.addMethod("reportusername", function(value, element) {
  */
 $("form[name='report-add']").validate({
     lang: 'ru',
-    debug: true,
+    //debug: true,
     rules: {
         startDate: {required: true,
             reportdate: true
