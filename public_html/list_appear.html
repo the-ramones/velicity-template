@@ -196,12 +196,13 @@
                             </tbody>
                             </thead>
                         </table>
-                        <button class="action add" onclick="add_modal()">add new</button>    
+                        <button class="action add" onclick="add_modal();">add new</button>    
+                        <button class="action" onclick="upload(this);">upload</button>
                     </div>
 
-                    <div id="confirm">
-                        <p><!-- Content -->New record has been added.<br/> Transaction Commited</p>
-                    </div>
+<!--                    <div id="confirm">
+                        <p> Content New record has been added.<br/> Transaction Commited</p>
+                    </div>-->
 
                     <script>
                         $("#confirm").on("click", function() {
@@ -239,6 +240,26 @@
                                 modal.open({content: $("#add333").html()});
                                 modal.open({content: $("#update333").html()});
                                 //modal.open({content: $("#delete333").html()});
+                            }
+                            
+                            function upload(button) {
+                                var $d = $("<div id='ajax-overlay'></div>");
+//                                        .css({
+//                                    "min-width": "100%",
+//                                    "min-height": "100%",
+//                                    "opacity": "0.5",
+//                                    "position": "fixed",
+//                                    "top": "0",
+//                                    "left": "0"
+//                                });
+                                $("body").append($d);
+                                $d.fadeIn();
+                                $d.click(function(e) {
+                                   e.preventDefault(); 
+                                   $(this).fadeOut();
+                                   $(this).remove();
+                                   return false;
+                                });
                             }
         </script>
 
