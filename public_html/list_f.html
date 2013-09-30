@@ -18,7 +18,21 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/libs/jquery-1.10.2.js"></script>
         <script src="js/libs/jquery-ui.min-1.10.0.js"></script>
+        <style>
+            .statistics {
+            }
 
+            .statistics span {
+                width: 100%;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .statistics textarea {
+                width: 100%;
+                resize: none;
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -223,15 +237,33 @@
         <script type="text/javascript" src="js/modal.js"></script>
         <script type="text/javascript">
                             function add_modal() {
-                                modal.open({content: $("#action333").html()});
-                                modal.open({content: $("#add333").html()});
-                                modal.open({content: $("#update333").html()});
+                                modal.open({content: $(".statistics").html()});
+                                $("#content").addClass("statistics");
+                                //modal.open({content: $("#action333").html()});
+                                //modal.open({content: $("#add333").html()});
+                                //modal.open({content: $("#update333").html()});
                                 //modal.open({content: $("#delete333").html()});
                             }
         </script>
 
+
         <!--post-->
 
+        <div class="statistics" style="display: none;">
+            <h2>Activity №${report.id}</h2>
+            <span>Counts</span>
+            <textarea class="clearfix">largetext</textarea>
+            <span>Counts</span><br />
+            <textarea class="clearfix">largetext</textarea>
+            <label>Average duration</label>
+            <span>10.25 days</span>
+            <div class="modal-block">
+                <div class="button-block-modal">
+                    <button class="action delete">Close</button>
+                </div>
+            </div>
+        </div>      
+        
         <div id="action333" style="display: none;">
             <h2>Activity №${report.id}</h2>
             <dl class="dl-horizontal">
