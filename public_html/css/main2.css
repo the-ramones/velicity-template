@@ -1,3 +1,53 @@
+/*index use check*/
+input[type=checkbox].css-checkbox {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:20px !important;
+    height:15px; 
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -15px;
+}
+
+.css-label{ 
+    background-image:url(http://csscheckbox.com/checkboxes/dark-check-orange.png); 
+}
+
+#index-check {
+    margin-top: 10px;
+    padding: 10px;
+    display: inline-block;
+    float: right;
+}
+
+#index-check checkbox {    
+    border-radius: 3px;  
+}
+
+#index-check label {
+    padding-left: 10px;
+    position: relative;
+    bottom: 2px;
+}
+
+/*modal block buttons*/
 .button-block-modal {
     width: fit-content;
     float: right;
@@ -958,34 +1008,34 @@ form {
         INTERMEDIATE: Menu
        ==================== */
 
-/*    #nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    #nav li:first-child a {
-        margin-left: 0;
-    }
-
-    #nav li:last-child a {
-        margin-right: 0;
-    }*/
+    /*    #nav a {
+            float: left;
+            width: 27%;
+            margin: 0 1.7%;
+            padding: 25px 2%;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    
+        #nav li:first-child a {
+            margin-left: 0;
+        }
+    
+        #nav li:last-child a {
+            margin-right: 0;
+        }*/
 
     /* ========================
         INTERMEDIATE: IE Fixes
        ======================== */
 
-/*    #nav ul li {
-        display: inline;
-    }
-
-    .oldie #nav a {
-        margin: 0 0.7%;
-    }*/
+    /*    #nav ul li {
+            display: inline;
+        }
+    
+        .oldie #nav a {
+            margin: 0 0.7%;
+        }*/
 }
 
 @media only screen and (min-width: 768px) {
@@ -1009,10 +1059,10 @@ form {
         float: left;
     }
 
-/*    #nav {
-        float: right;
-        width: 56%;
-    }*/
+    /*    #nav {
+            float: right;
+            width: 56%;
+        }*/
 
     /* ============
         WIDE: Main
@@ -1036,9 +1086,9 @@ form {
         Maximal Width
        =============== */
 
-/*    #nav {
-        width: 38%;
-    }*/
+    /*    #nav {
+            width: 38%;
+        }*/
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;

@@ -31,8 +31,8 @@
                 $("#login").click(function() {
                     $("#popup-language").hide(50);
                     setTimeout(function() {
-                    $("#popup-login").fadeToggle(150); 
-                    },50);
+                        $("#popup-login").fadeToggle(150);
+                    }, 50);
                     return false;
                 });
                 $("#popup-login,#popup-language").mouseleave(function(event) {
@@ -85,6 +85,14 @@
                         <form name="search-form" method="POST" action="search" autocomplete="off">
                             <input type="button" name="search-button" id="search_button" />
                             <input type="text" name="search" value="" placeholder="Search" />
+                            <div id="index-check">
+                                <input id="demo_box_1" class="css-checkbox" type="checkbox" />
+                                <label for="demo_box_1" name="demo_lbl_1" class="css-label">use index?</label>
+                            </div>
+<!--                            <input id="use-index-checkbox" class="css-checkbox" type="checkbox" name="use_index" />
+                            <label for="use_index" class="css-label">use index?</label>-->
+
+
                             <ul class="subnav">
                                 <li><a href="#">Nothing has been found (:</a></li>
                             </ul>
