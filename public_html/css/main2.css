@@ -1,3 +1,36 @@
+/*progress bar*/
+progress {
+    background-color: rgb(34, 34, 34);
+    background-color: rgba(34, 34, 34, 0.8);
+    border: 0;
+    height: 18px;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    float: right;
+    width: 100px;
+    margin-top: 6px;
+}
+/*progress meter in Chrome and Safari*/
+progress::-webkit-progress-bar {  
+    border-radius: 9px;
+}  
+progress::-webkit-progress-value {  
+    border-radius: 9px;
+    background-color: rgb(224, 133, 36);
+}  
+/*pseudo progress bar element, Firefox*/
+progress::-moz-progress-bar {  
+    border-radius: 9px;
+    background-color: rgb(224, 133, 36);
+}  
+
+/*Stop scrolling*/
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 /*index use check*/
 input[type=checkbox].css-checkbox {
     position: absolute; 
@@ -20,6 +53,8 @@ input[type=checkbox].css-checkbox + label.css-label {
     font-size:15px;
     vertical-align:middle;
     cursor:pointer;
+    float: right;
+    top: 4px;
 }
 
 input[type=checkbox].css-checkbox:checked + label.css-label {
@@ -31,14 +66,23 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 }
 
 #index-check {
+    border: 1px dotted black;
     margin-top: 10px;
     padding: 10px;
     display: inline-block;
     float: right;
 }
 
+#index-check > label[name='index-progress-label'] {
+    text-align: center;
+    position: relative;        
+    display: block;
+    color: rgb(204, 103, 26);
+}
+
 #index-check checkbox {    
     border-radius: 3px;  
+
 }
 
 #index-check label {

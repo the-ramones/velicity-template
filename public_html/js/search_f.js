@@ -2,10 +2,16 @@
  * Actions on search box interactions
  */
 $(document).ready(function() {
-    $(".subnav").on("click", "a", function() {
+    $(".subnav").on("click", "a", function(e) {
+        e.preventDefault();
+        /*
+         * Prevent unneccesary 'bounce' scrolling
+         */
+        $("html").addClass("stop-scrolling");
         $("input[name='search']").val($(this).text());
         $(".subnav li").css({
             visibility: 'hidden'});
+        $("html").removeClass("stop-scrolling");
     });
     $("input[name='search']").keydown(function(event) {
         var key = event.which;

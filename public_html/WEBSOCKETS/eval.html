@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script type="text/javascript">
+            var webSocket = new WebSocket("ws://www.websocket.org", "soap");
+            webSocket.onopen = onOpen;
+            webSocket.onmessage = onMessage;
+            webSocket.onerror = onError;
+            webSocket.onclose = onClose;
+            
+            webSocket.send("Message Send");
+            webSocket.close();
+            
+                /*
+                 * webSocket.readyState : 
+                 *      CONNECTING,
+                 *      OPEN
+                 *      
+                 * webSocket.protocol : protocol to be used
+                 * 
+                 * ws : WebSocket protocol
+                 * wss: WebSocket secured protocol
+                 */
+        </script>
+    </body>
+</html>
