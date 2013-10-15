@@ -1,3 +1,25 @@
+/*cloud*/
+#cloud-performer {
+    border-top-width:15px;
+    float:right; 
+    display:inline-block; 
+    margin-left: 10px; 
+    width: auto;
+    max-width: 35%; 
+    color: rgb(204, 103, 26); 
+    text-decoration: none;
+}
+
+a.cloud-element {
+    text-decoration: none;
+    color: rgb(204, 103, 26);
+    font-weight: bold;
+}
+
+a.cloud-element:hover {
+    color: #b94a48;   
+}
+
 /*progress bar*/
 progress {
     background-color: rgb(34, 34, 34);
